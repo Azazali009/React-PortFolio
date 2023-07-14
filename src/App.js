@@ -4,7 +4,7 @@ import Features from "./Features";
 import Resume from "./Resume";
 import Contacts from "./Contacts";
 import Footer from "./Footer";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import Education from "./component/resume/Education";
