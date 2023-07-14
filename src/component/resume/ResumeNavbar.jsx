@@ -5,13 +5,13 @@ const ResumeNavbar = () => {
   return (
     <div className=" mx-auto">
       <ul className="azaz flex flex-col gap-4 sm:grid sm:grid-cols-3 bg-gray-300 shadow-shadowTwo dark:shadow-none dark:bg-black dark:bg-opacity-25 text-gray-500 dark:text-gray-300 rounded-lg">
-        <NavLink to={"/resume/education"}>
+        <NavLink to={"education"}>
           <li className=" resume-nav ">Education</li>
         </NavLink>
-        <NavLink to={"/resume/skills"}>
+        <NavLink to={"skills"}>
           <li className="resume-nav ">Professional skills</li>
         </NavLink>
-        <NavLink to={"/resume/experience"}>
+        <NavLink to={"experience"}>
           <li className=" resume-nav ">experience</li>
         </NavLink>
       </ul>

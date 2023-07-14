@@ -4,7 +4,7 @@ import Features from "./Features";
 import Resume from "./Resume";
 import Contacts from "./Contacts";
 import Footer from "./Footer";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import Education from "./component/resume/Education";
@@ -21,16 +21,16 @@ function App() {
       <Header />
       <AnimatePresence>
         <Routes location={location} key={location.key}>
-          <Route path="/" element={<Home />} />
-          <Route path="/features" element={<Features />} />
+          <Route index element={<Home />} />
+          <Route path="features" element={<Features />} />
           <Route path="resume" element={<Resume />}>
             <Route index element={<ResumeHome />} />
             <Route path="education" element={<Education />} />
             <Route path="skills" element={<Skills />} />
             <Route path="experience" element={<Experience />} />
           </Route>
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="contacts" element={<Contacts />} />
         </Routes>
       </AnimatePresence>
       <Footer />

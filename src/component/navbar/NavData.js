@@ -6,22 +6,22 @@ export const NavData = [
   },
   {
     name: "Features",
-    link: "/features",
+    link: "features",
     id: 1001,
   },
   {
     name: "Resume",
-    link: "/resume",
+    link: "resume",
     id: 1002,
   },
   {
     name: "Blog",
-    link: "/blog",
+    link: "blog",
     id: 1003,
   },
   {
     name: "Contacts",
-    link: "/contacts",
+    link: "contacts",
     id: 1004,
   },
 ];
