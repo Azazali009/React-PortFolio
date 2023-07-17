@@ -94,7 +94,7 @@ export const featuredData = [
       "Its true that UI or UX designers’ main aim is to enhance users’ satisfaction, by creating products and interfaces that are intuitive, simple and efficient. I develope user interactive and user friendly interface which will be experienced by users.",
   },
   {
-    id: 2002,
+    id: 2004,
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
