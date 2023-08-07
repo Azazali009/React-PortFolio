@@ -32,6 +32,7 @@ const HomeIcons = () => {
           >
             <Link
               to={"https://web.facebook.com/profile.php?id=100054485964944"}
+              className="outline-none rounded-sm focus:ring-2 border-none focus:ring-offset-2 focus:ring-designColor"
             >
               <FacebookOutlinedIcon />
             </Link>
@@ -41,7 +42,10 @@ const HomeIcons = () => {
             variants={iconVariants}
             whileHover="hover"
           >
-            <Link to={"https://twitter.com/Aizykhan11"}>
+            <Link
+              to={"https://twitter.com/Aizykhan11"}
+              className="outline-none rounded-sm focus:ring-2 border-none focus:ring-offset-2 focus:ring-designColor"
+            >
               <TwitterIcon />
             </Link>
           </motion.div>
@@ -50,7 +54,10 @@ const HomeIcons = () => {
             variants={iconVariants}
             whileHover="hover"
           >
-            <Link to={"https://www.instagram.com/aizykhan009/"}>
+            <Link
+              to={"https://www.instagram.com/aizykhan009/"}
+              className=" outline-none rounded-sm focus:ring-2 border-none focus:ring-offset-2 focus:ring-designColor"
+            >
               <InstagramIcon />
             </Link>
           </motion.div>

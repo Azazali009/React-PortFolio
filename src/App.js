@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
@@ -9,20 +9,31 @@ import Skills from "./component/resume/Skills";
 import Experience from "./component/resume/Experience";
 import ResumeHome from "./component/resume/ResumeHome";
 import PageLoader from "./component/PageLoader";
+import Modal from "./ui/Modal";
 
 // Dynamic imports
-const Home = lazy(() => import("./Home"));
-const Features = lazy(() => import("./Features"));
-const Resume = lazy(() => import("./Resume"));
-const Blog = lazy(() => import("./Blog"));
-const Contacts = lazy(() => import("./Contacts"));
-const Footer = lazy(() => import("./Footer"));
+const Home = lazy(() => import("./pages/Home"));
+const Features = lazy(() => import("./pages/Features"));
+const Resume = lazy(() => import("./pages/Resume"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Contacts = lazy(() => import("./pages/Contacts"));
+const Footer = lazy(() => import("./pages/Footer"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 function App() {
+  const [openModal, setOpenModal] = useState(false);
   const location = useLocation();
-
+  const close = () => setOpenModal(false);
   return (
     <div className="App">
+      {openModal && (
+        <Modal onClose={close}>
+          Sorry! These pages are under construction. We will build those pages
+          as soon as possible. If you need any contact information or any
+          material you can contact us through website or directly through email.
+          Thank You
+        </Modal>
+      )}
       <Header />
       <AnimatePresence>
         <Suspense fallback={<PageLoader />}>
@@ -37,10 +48,11 @@ function App() {
             </Route>
             <Route path="blog" element={<Blog />} />
             <Route path="contacts" element={<Contacts />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Suspense>
       </AnimatePresence>
-      <Footer />
+      <Footer setOpenModal={setOpenModal} />
     </div>
   );
 }

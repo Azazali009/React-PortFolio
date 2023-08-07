@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ContactImage from "./component/ContactImage";
-import ContactForm from "./component/ContactForm";
+import ContactImage from "../component/ContactImage";
+import ContactForm from "../component/ContactForm";
 
 const pageTransitionVariants = {
   hidden: {

@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { developerLinks } from "./FooterLinksData";
 import { motion } from "framer-motion";
 
-const Developer = () => {
+const Developer = ({ setOpenModal }) => {
   return (
     <div>
       <h2 className=" text-2xl text-designColor mb-8 uppercase">Developers</h2>
@@ -16,7 +15,12 @@ const Developer = () => {
               className="text-lg dark:text-lightText text-gray-500 capitalize font-medium"
               key={link.id}
             >
-              <Link>{link.name}</Link>
+              <button
+                onClick={() => setOpenModal((show) => !show)}
+                className=" outline-none rounded-sm focus:ring-2 border-none focus:ring-offset-2 focus:ring-designColor"
+              >
+                {link.name}
+              </button>
             </motion.li>
           );
         })}

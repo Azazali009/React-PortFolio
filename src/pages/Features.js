@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { featuredData } from "./component/FeaturedData/FeaturedData";
-import FeaturedCard from "./component/FeaturedData/FeaturedCard";
+import { featuredData } from "../component/FeaturedData/FeaturedData";
+import FeaturedCard from "../component/FeaturedData/FeaturedCard";
 
 const pageTransitionVariants = {
   hidden: {

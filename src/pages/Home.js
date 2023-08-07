@@ -1,7 +1,7 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import HomeIcons from "./component/HomeIcons";
-import HomeImage from "./component/HomeImage";
+import HomeIcons from "../component/HomeIcons";
+import HomeImage from "../component/HomeImage";
 import { motion } from "framer-motion";
 
 const pageTransitionVariants = {

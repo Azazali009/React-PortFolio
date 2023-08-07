@@ -1,9 +1,8 @@
 import React from "react";
 import { resourceLinks } from "./FooterLinksData";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const ResourceLinks = () => {
+const ResourceLinks = ({ setOpenModal }) => {
   return (
     <div>
       <div>
@@ -17,7 +16,12 @@ const ResourceLinks = () => {
                 className=" dark:text-lightText text-gray-500 text-lg capitalize font-medium"
                 key={link.id}
               >
-                <Link>{link.name}</Link>
+                <button
+                  onClick={() => setOpenModal((show) => !show)}
+                  className=" outline-none rounded-sm focus:ring-2 border-none focus:ring-offset-2 focus:ring-designColor"
+                >
+                  {link.name}
+                </button>
               </motion.li>
             );
           })}

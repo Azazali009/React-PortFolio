@@ -1,9 +1,10 @@
 import React from "react";
-import Logo from "./component/Logo";
-import HomeIcons from "./component/HomeIcons";
-import Developer from "./component/footerData/Developer";
-import ResourceLinks from "./component/footerData/ResourceLinks";
-const Footer = () => {
+import Logo from "../component/Logo";
+import HomeIcons from "../component/HomeIcons";
+import Developer from "../component/footerData/Developer";
+import ResourceLinks from "../component/footerData/ResourceLinks";
+
+const Footer = ({ setOpenModal }) => {
   const curYear = new Date().getFullYear();
   return (
     <div className=" w-full min-h-screen bg-gray-200 dark:bg-bodyColor dark:text-lightText p-10 font-primary ">
@@ -15,8 +16,8 @@ const Footer = () => {
         </div>
 
         {/* Footer Links */}
-        <Developer />
-        <ResourceLinks />
+        <Developer setOpenModal={setOpenModal} />
+        <ResourceLinks setOpenModal={setOpenModal} />
       </div>
       <p className=" text-center text-sm sm:text-lg text-gray-500 my-4 mx-auto">
         &copy;{curYear}. All rights reserved by Azaz ali

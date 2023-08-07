@@ -39,11 +39,16 @@ const Navbar = () => {
             return (
               <motion.li
                 key={item.id}
-                className=" p-4 "
+                className=" p-4"
                 variants={navbarVariant}
                 whileHover="hover"
               >
-                <NavLink to={item.link}>{item.name}</NavLink>
+                <NavLink
+                  className=" outline-none rounded-sm focus:ring-2 border-none focus:ring-offset-2 focus:ring-designColor "
+                  to={item.link}
+                >
+                  {item.name}
+                </NavLink>
               </motion.li>
             );
           })}

@@ -1,6 +1,6 @@
 import React from "react";
 // import { motion } from "framer-motion";
-import ResumeNavbar from "./component/resume/ResumeNavbar";
+import ResumeNavbar from "../component/resume/ResumeNavbar";
 import { Outlet } from "react-router-dom";
 
 const Resume = () => {
