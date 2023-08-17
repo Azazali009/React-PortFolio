@@ -9,7 +9,11 @@ const Header = () => {
 
   useEffect(() => {
     if (localStorage.getItem("theme") === null) {
-      localStorage.setItem("theme", "dark");
+      localStorage.setItem(
+        "theme",
+        window.matchMedia("(prefers-color-scheme: dark)").matches,
+        "theme"
+      );
     }
   }, []);
 
