@@ -4,6 +4,7 @@ import HomeIcons from "../component/HomeIcons";
 import HomeImage from "../component/HomeImage";
 import { motion } from "framer-motion";
 
+import { Link } from "react-router-dom";
 const pageTransitionVariants = {
   hidden: {
     x: "-100vw",
@@ -26,9 +27,23 @@ const pageTransitionVariants = {
 const childVariant = {
   hidden: {
     opacity: 0,
+    x: -100,
   },
   visible: {
     opacity: 1,
+    x: 0,
+  },
+};
+
+const iconVariants = {
+  hover: {
+    scale: 1.2,
+    originX: 0,
+    color: "#ff014f",
+    transition: {
+      type: "spring",
+      stiffness: 300,
+    },
   },
 };
 
@@ -87,12 +102,27 @@ const Home = () => {
             and many more packages. I am a full stack developer with stack of
             React and Firebase which is so powerfull and have high performance.
           </motion.p>
-          <motion.div variants={childVariant}>
-            <HomeIcons />
+
+          <motion.div
+            className=" flex sm:flex-row flex-col items-center gap-12"
+            variants={childVariant}
+          >
+            <motion.div>
+              <HomeIcons />
+            </motion.div>
+            <motion.div variants={iconVariants} whileHover={"hover"}>
+              <Link
+                className=" capitalize dark:bg-designColor px-8 sm:px-16 py-2.5 sm:py-4 rounded dark:text-white shadow-shadowTwo text-gray-500 dark:shadow-none"
+                to="/data/cv.pdf"
+                target="_blank"
+                download
+              >
+                download cv
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
         {/* Home Right side */}
-
         <HomeImage />
       </div>
     </motion.div>
