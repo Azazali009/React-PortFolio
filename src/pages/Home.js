@@ -68,7 +68,7 @@ const Home = () => {
       animate="visible"
       exit="exit"
     >
-      <div className=" py-16 sm:px-4 flex flex-col gap-8 items-center lg:flex-row lg:items-center lg:gap-16">
+      <div className=" py-16 sm:px-4 flex flex-col gap-8 items-center lg:flex-row lg:items-center lg:gap-16 justify-between">
         {/* Home left side */}
 
         <motion.div className=" w-full lg:w-1/2 self-start">

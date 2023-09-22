@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import image from "../image/955C20C0-656C-4281-9F84-4BE5F5EFDBBB.JPEG-removebg-preview.png";
+import image from "../image/azaz.png";
 
 const parentVariant = {
   hidden: {
@@ -50,19 +50,19 @@ const imageBackVariant = {
 const HomeImage = () => {
   return (
     <motion.div
-      className=" relative flex items-center justify-center ml-8"
+      className=" relative "
       variants={parentVariant}
       initial="hidden"
       animate="visible"
     >
       <motion.img
-        className=" w-[300px] h-[400px] lg:w-[500px] lg:h-[680px] relative z-10"
+        className=" lg:-mt-40 w-[260px] h-[400px] lg:w-[370px] lg:h-[680px] xl:w-[450px] xl:h-[800px] relative z-10"
         src={image}
-        alt=""
+        alt="Hero image"
         variants={imageVariant}
       />
       <motion.div
-        className=" -ml-20 absolute bottom-0 shadow-shadowTwo rounded-lg w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] dark:bg-gradient-to-r from-[#1e2024] to-[#202327] dark:shadow-shadowOne"
+        className="  absolute bottom-0 shadow-shadowTwo rounded-lg w-[260px] h-[300px] lg:w-[370px] xl:w-[450px] lg:h-[500px] xl:h-[550px] dark:bg-gradient-to-r from-[#1e2024] to-[#202327] dark:shadow-shadowOne"
         variants={imageBackVariant}
       ></motion.div>
     </motion.div>
