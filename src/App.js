@@ -34,8 +34,8 @@ function App() {
           Thank You
         </Modal>
       )}
-      <Header />
       <AnimatePresence>
+        <Header />
         <Suspense fallback={<PageLoader />}>
           <Routes location={location} key={location.key}>
             <Route index element={<Home />} />
