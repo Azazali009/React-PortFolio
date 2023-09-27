@@ -50,6 +50,7 @@ const Header = () => {
           } px-2 py-1 `}
           onClick={handleTheme}
         >
+          {/* dark&light mode */}
           {theme === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
         </button>
       </div>
