@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import contactImg from "../image/contact.jpg";
+// import contactImg from "../image/contact.jpg";
+import contactWebp from "../image/contact.webp";
+import contactMin from "../image/contact-min.jpg";
 import { Link } from "react-router-dom";
 import HomeIcons from "./HomeIcons";
 import { Blurhash } from "react-blurhash";
@@ -12,7 +14,7 @@ const ContactImage = () => {
     img.onload = () => {
       setImageLoader(true);
     };
-    img.src = contactImg;
+    img.src = contactWebp || contactMin;
   }, []);
 
   return (
@@ -28,14 +30,18 @@ const ContactImage = () => {
         />
       </div>
 
-      <img
-        loading="lazy"
-        className={` ${
-          imageLoader ? " inline" : "hidden"
-        } w-full rounded-xl  mb-6 group-hover:scale-110 duration-300`}
-        src={contactImg}
-        alt="Contact"
-      />
+      <picture>
+        <source srcSet={contactWebp} type="image/webp" />
+        <source srcSet={contactMin} type="image/jpg" />
+        <img
+          loading="lazy"
+          className={` ${
+            imageLoader ? " inline" : "hidden"
+          } w-full rounded-xl  mb-6 group-hover:scale-110 duration-300`}
+          src={contactMin}
+          alt="Contact"
+        />
+      </picture>
 
       <h3 className=" text-4xl font-bold text-gray-500 dark:text-white capitalize">
         Azaz ali

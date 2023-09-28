@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import image from "../image/azaz.png";
+// import image from "../image/azaz.png";
+import imageWebp from "../image/azaz.webp";
+import imageMin from "../image/azaz-min.png";
 import { Blurhash } from "react-blurhash";
 
 const parentVariant = {
@@ -56,7 +58,7 @@ const HomeImage = () => {
     img.onload = () => {
       setImageLoader(true);
     };
-    img.src = image;
+    img.src = imageWebp || imageMin;
   }, []);
   return (
     <motion.div
@@ -77,13 +79,17 @@ const HomeImage = () => {
       </div>
 
       <div className={`${imageLoader ? " inline" : "  hidden "}`}>
-        <motion.img
-          loading="lazy"
-          className=" lg:-mt-40 w-[260px] h-[400px] lg:w-[370px] lg:h-[680px] xl:w-[450px] xl:h-[800px] relative z-10"
-          src={image}
-          alt="Hero image"
-          variants={imageVariant}
-        />
+        <picture>
+          <source srcSet={imageWebp} type="image/webp" />
+          <source srcSet={imageMin} type="image/png" />
+          <motion.img
+            loading="lazy"
+            className=" lg:-mt-40 w-[260px] h-[400px] lg:w-[370px] lg:h-[680px] xl:w-[450px] xl:h-[800px] relative z-10"
+            src={imageMin}
+            alt="Hero image"
+            variants={imageVariant}
+          />
+        </picture>
         <motion.div
           className="  absolute bottom-0 shadow-shadowTwo rounded-lg w-[260px] h-[300px] lg:w-[370px] xl:w-[450px] lg:h-[500px] xl:h-[550px] dark:bg-gradient-to-r from-[#1e2024] to-[#202327] dark:shadow-shadowOne"
           variants={imageBackVariant}
