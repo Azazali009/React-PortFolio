@@ -7,7 +7,7 @@ module.exports = {
       colors: {
         bodyColor: "#212428",
         lightText: "#c4cfde",
-        designColor: "#ff014f",
+        designColor: "#ff013f",
         boxBg: "linear-gradient(145deg, #1e2024, #23272b)",
         cardBg: "#444e52",
       },
@@ -20,5 +20,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
