@@ -2,26 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { featuredData } from "../component/FeaturedData/FeaturedData";
 import FeaturedCard from "../component/FeaturedData/FeaturedCard";
-
-const pageTransitionVariants = {
-  hidden: {
-    x: "100vw",
-    opacity: 0,
-  },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.2,
-      duration: 0.5,
-      type: "spring",
-      stiffness: 200,
-    },
-  },
-  exit: {
-    x: "-100vw",
-  },
-};
+import { pageTransitionVariants } from "../animation variants/pageTransitionVariants";
 
 const Features = () => {
   return (

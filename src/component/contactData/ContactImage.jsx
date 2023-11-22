@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import contactImg from "../image/contact.jpg";
-import contactWebp from "../image/contact.webp";
-import contactMin from "../image/contact-min.jpg";
+
+import contactWebp from "../../image/contact.webp";
+import contactMin from "../../image/contact-min.jpg";
 import { Link } from "react-router-dom";
-import HomeIcons from "./HomeIcons";
+import HomeIcons from "../HomeIcons";
 import { Blurhash } from "react-blurhash";
 
 const ContactImage = () => {

@@ -1,27 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ContactImage from "../component/ContactImage";
-import ContactForm from "../component/ContactForm";
+import ContactImage from "../component/contactData/ContactImage";
+import ContactForm from "../component/contactData/ContactForm";
+import { pageTransitionVariants } from "../animation variants/pageTransitionVariants";
 
-const pageTransitionVariants = {
-  hidden: {
-    x: "100vw",
-    opacity: 0,
-  },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.2,
-      duration: 0.5,
-      type: "spring",
-      stiffness: 200,
-    },
-  },
-  exit: {
-    x: "-100vw",
-  },
-};
 const Contacts = () => {
   return (
     <motion.div

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { NavData } from "./NavData";
 import Hamburger from "hamburger-react";
-
 import { motion } from "framer-motion";
-import MobileNav from "./MobileNav";
 import { navbarVariant } from "./navBarVariatns";
+
+import { NavData } from "./NavData";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   const [showNav, setOpen] = useState(false);
@@ -23,7 +23,7 @@ const Navbar = () => {
                 whileHover="hover"
               >
                 <NavLink
-                  className=" outline-none rounded-sm focus:ring-2 border-none focus:ring-offset-2 focus:ring-designColor "
+                  className=" outline-none rounded-sm focus:ring-2  px-2 py-1 border-none  focus:ring-designColor  "
                   to={item.link}
                 >
                   {item.name}

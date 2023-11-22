@@ -1,10 +1,11 @@
 import React from "react";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
 import HomeIcons from "../component/HomeIcons";
 import HomeImage from "../component/HomeImage";
-import { motion } from "framer-motion";
 
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
+
 const pageTransitionVariants = {
   hidden: {
     x: "-100vw",
