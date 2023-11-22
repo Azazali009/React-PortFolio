@@ -33,3 +33,7 @@
 .contactLabel {
   @apply uppercase text-sm text-gray-500 dark:text-gray-400 font-medium dark:font-normal;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

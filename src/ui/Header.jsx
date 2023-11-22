@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./navbar/Navbar";
+import Navbar from "../component/navbar/Navbar";
 // import LightModeIcon from "@mui/icons-material/LightMode";
 // import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Logo from "./Logo";
 
 const Header = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     if (localStorage.getItem("theme") === null) {

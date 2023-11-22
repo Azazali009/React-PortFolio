@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ProgressBar from "../ProgressBar";
+import ProgressBar from "./ProgressBar";
 
 const pageTransitionVariants = {
   hidden: {
@@ -11,8 +11,9 @@ const pageTransitionVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      delay: 0.2,
-      type: "spring",
+      // delay: 0.2,
+      duration: 0.6,
+
       when: "beforeChildren",
       staggerChildren: 0.4,
     },

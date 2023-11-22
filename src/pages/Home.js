@@ -1,6 +1,6 @@
 import React from "react";
-import HomeIcons from "../component/HomeIcons";
-import HomeImage from "../component/HomeImage";
+import HomeIcons from "../component/homeData/HomeIcons";
+import HomeImage from "../component/homeData/HomeImage";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";

@@ -11,8 +11,7 @@ const pageTransitionVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      delay: 0.2,
-      type: "spring",
+      duration: 0.6,
     },
   },
   exit: {

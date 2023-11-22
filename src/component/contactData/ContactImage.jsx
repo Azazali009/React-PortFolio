@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import contactWebp from "../../image/contact.webp";
 import contactMin from "../../image/contact-min.jpg";
 import { Link } from "react-router-dom";
-import HomeIcons from "../HomeIcons";
 import { Blurhash } from "react-blurhash";
+import HomeIcons from "../homeData/HomeIcons";
 
 const ContactImage = () => {
   const [imageLoader, setImageLoader] = useState(false);

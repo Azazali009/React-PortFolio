@@ -7,9 +7,9 @@ export const pageTransitionVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      // duration: 0.1,
       type: "spring",
-      stiffness: 20,
+      stiffness: 40,
     },
   },
   exit: {

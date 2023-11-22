@@ -10,7 +10,8 @@ const pageTransitionVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      duration: 0.6,
+
       when: "beforeChildren",
       staggerChildren: 0.4,
     },

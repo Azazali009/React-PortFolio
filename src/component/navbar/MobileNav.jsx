@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 import React, { useEffect } from "react";
 
 import { NavData } from "./NavData";
-import HomeIcons from "../HomeIcons";
 import logo from "../../image/fvrt.jpg";
 import { moblNavVariant } from "./navBarVariatns";
+import HomeIcons from "../homeData/HomeIcons";
 
 const MobileNav = ({ navbarVariant, setOpen }) => {
   useEffect(() => {

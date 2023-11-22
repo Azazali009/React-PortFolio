@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-// import image from "../image/azaz.png";
-import imageWebp from "../image/azaz.webp";
-import imageMin from "../image/azaz-min.png";
+
+import imageWebp from "../../image/azaz.webp";
+import imageMin from "../../image/azaz-min.png";
 import { Blurhash } from "react-blurhash";
 
 const parentVariant = {

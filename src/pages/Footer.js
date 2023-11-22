@@ -1,8 +1,8 @@
 import React from "react";
-import Logo from "../component/Logo";
-import HomeIcons from "../component/HomeIcons";
+import Logo from "../ui/Logo";
 import Developer from "../component/footerData/Developer";
 import ResourceLinks from "../component/footerData/ResourceLinks";
+import HomeIcons from "../component/homeData/HomeIcons";
 
 const Footer = ({ setOpenModal }) => {
   const curYear = new Date().getFullYear();

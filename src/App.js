@@ -2,14 +2,14 @@ import { Suspense, lazy, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import Header from "./component/Header";
+import Header from "./ui/Header";
 
 import Education from "./component/resume/Education";
 import Skills from "./component/resume/Skills";
 import Experience from "./component/resume/Experience";
 import ResumeHome from "./component/resume/ResumeHome";
-import PageLoader from "./component/PageLoader";
 import Modal from "./ui/Modal";
+import PageLoader from "./ui/PageLoader";
 
 // Dynamic imports
 const Home = lazy(() => import("./pages/Home"));
@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       {openModal && (
-        <Modal onClose={close}>
+        <Modal onClose={close} title={"under building"}>
           Sorry! These pages are under construction. We will build those pages
           as soon as possible. If you need any contact information or any
           material you can contact us through website or directly through email.
