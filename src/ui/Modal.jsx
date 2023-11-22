@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutSideClick } from "../hooks/useOutSideClick";
@@ -7,6 +7,12 @@ import { ModalVariant } from "../animation variants/ModalVariant";
 export default function Modal({ children, onClose, title }) {
   const ref = useOutSideClick(onClose);
 
+  useEffect(() => {
+    document.body.style.overflowY = "hidden";
+    return () => {
+      document.body.style.overflowY = "scroll";
+    };
+  }, []);
   return createPortal(
     <AnimatePresence>
       <div className=" fixed z-50 top-0 left-0 bg-opacity-40 h-screen w-full backdrop-blur-lg flex items-center justify-center">
@@ -16,7 +22,7 @@ export default function Modal({ children, onClose, title }) {
           animate="visible"
           exit="hidden"
           ref={ref}
-          className=" no-scrollbar relative flex flex-col max-h-[calc(100vh-5em)] overflow-y-scroll gap-2 sm:gap-8 bg-white rounded-2xl p-3 sm:p-6 w-[90%] sm:w-[50%]"
+          className=" no-scrollbar relative flex flex-col max-h-[calc(100vh-5em)] overflow-y-scroll gap-2 sm:gap-8 bg-white rounded-2xl p-6 w-[90%] lg:w-[50%]"
         >
           <button
             onClick={onClose}

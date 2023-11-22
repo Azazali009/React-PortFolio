@@ -13,17 +13,17 @@ const Navbar = () => {
   return (
     <div>
       <nav>
-        <ul className=" hidden md:flex gap-4 text-gray-400 text-xl capitalize">
+        <ul className=" hidden md:flex gap-6 text-gray-400 text-xl capitalize">
           {NavData.map((item) => {
             return (
               <motion.li
                 key={item.name}
-                className=" p-4"
+                className=" "
                 variants={navbarVariant}
                 whileHover="hover"
               >
                 <NavLink
-                  className=" outline-none rounded-sm focus:ring-2  px-2 py-1 border-none  focus:ring-designColor  "
+                  className=" outline-none rounded-sm focus:ring-2  px-2 py-1 border-none focus:ring-designColor  "
                   to={item.link}
                 >
                   {item.name}

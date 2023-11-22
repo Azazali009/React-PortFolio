@@ -7,11 +7,14 @@ import { NavData } from "./NavData";
 import logo from "../../image/fvrt.jpg";
 import { moblNavVariant } from "./navBarVariatns";
 import HomeIcons from "../homeData/HomeIcons";
+import {useOutSideClick} from '../../hooks/useOutSideClick'
 
 const MobileNav = ({ navbarVariant, setOpen }) => {
+  const onClose = ()=> setOpen(false)
+  const ref = useOutSideClick(onClose)
+
   useEffect(() => {
     document.body.style.overflowY = "hidden";
-
     return () => {
       document.body.style.overflowY = "scroll";
     };
@@ -24,6 +27,7 @@ const MobileNav = ({ navbarVariant, setOpen }) => {
         initial="hidden"
         animate="visible"
         exit="hidden"
+        ref={ref}
       >
         <div className=" flex flex-col gap-4 text-gray-500 dark:text-gray-400">
           <div className=" flex justify-between items-center">
@@ -38,7 +42,7 @@ const MobileNav = ({ navbarVariant, setOpen }) => {
             <motion.button
               variants={navbarVariant}
               whileHover="hover"
-              onClick={() => setOpen(false)}
+              onClick={onClose}
             >
               <CloseIcon />
             </motion.button>
