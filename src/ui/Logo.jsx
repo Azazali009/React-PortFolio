@@ -33,7 +33,7 @@ const Logo = () => {
         alt="Logo"
         loading="lazy"
       />
-      <h1 className="font-bold text-gray-500 dark:text-gray-200 text-xl hover:text-designColor transition-all duration-300">
+      <h1 className=" font-bold text-gray-500 dark:text-gray-200 text-xl lg:text-4xl">
         Aizy
       </h1>
     </div>

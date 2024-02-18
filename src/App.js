@@ -10,6 +10,14 @@ import Experience from "./component/resume/Experience";
 import ResumeHome from "./component/resume/ResumeHome";
 import Modal from "./ui/Modal";
 import PageLoader from "./ui/PageLoader";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Toaster } from "react-hot-toast";
+import UserAccount from "./component/user/UserAccount";
+import ForgotPassword from "./component/forgotPassword/ForgotPassword";
+import RecoverPassword from "./component/forgotPassword/RecoverPassword";
 
 // Dynamic imports
 const Home = lazy(() => import("./pages/Home"));
@@ -21,6 +29,13 @@ const Footer = lazy(() => import("./pages/Footer"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 0,
+      },
+    },
+  });
   const [openModal, setOpenModal] = useState(false);
   const location = useLocation();
   const close = () => setOpenModal(false);
@@ -34,25 +49,54 @@ function App() {
           Thank You
         </Modal>
       )}
-      <AnimatePresence>
-        <Header />
-        <Suspense fallback={<PageLoader />}>
-          <Routes location={location} key={location.key}>
-            <Route index element={<Home />} />
-            <Route path="features" element={<Features />} />
-            <Route path="resume" element={<Resume />}>
-              <Route index element={<ResumeHome />} />
-              <Route path="education" element={<Education />} />
-              <Route path="skills" element={<Skills />} />
-              <Route path="experience" element={<Experience />} />
-            </Route>
-            <Route path="blog" element={<Blog />} />
-            <Route path="contacts" element={<Contacts />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </Suspense>
-      </AnimatePresence>
-      <Footer setOpenModal={setOpenModal} />
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        <Toaster
+          position="top-right"
+          gutter={12}
+          containerStyle={{ margin: "8px", fontFamily: "Montserrat" }}
+          toastOptions={{
+            success: {
+              duration: 3000,
+            },
+            error: {
+              duration: 5000,
+            },
+            style: {
+              fontSize: "16px",
+              maxWidth: "500px",
+              padding: "10px 24px",
+              fontWeight: "500",
+              background: "white",
+              color: "rgb(33, 21, 21)",
+            },
+          }}
+        />
+        <AnimatePresence>
+          <Header />
+          <Suspense fallback={<PageLoader />}>
+            <Routes location={location} key={location.key}>
+              <Route index element={<Home />} />
+              <Route path="features" element={<Features />} />
+              <Route path="resume" element={<Resume />}>
+                <Route index element={<ResumeHome />} />
+                <Route path="education" element={<Education />} />
+                <Route path="skills" element={<Skills />} />
+                <Route path="experience" element={<Experience />} />
+              </Route>
+              <Route path="blog" element={<Blog />} />
+              <Route path="contacts" element={<Contacts />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="me" element={<UserAccount />} />
+              <Route path="forgot-password" element={<ForgotPassword />} />
+              <Route path="update-password" element={<RecoverPassword />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </Suspense>
+        </AnimatePresence>
+        <Footer setOpenModal={setOpenModal} />
+      </QueryClientProvider>
     </div>
   );
 }

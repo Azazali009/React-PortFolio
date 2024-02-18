@@ -80,7 +80,7 @@ const Home = () => {
             welcome to my world
           </motion.p>
           <motion.h1
-            className=" dark:text-gray-200  text-3xl md:text-6xl font-bold mb-4 tracking-tighter"
+            className=" dark:text-gray-200  text-3xl md:text-5xl font-bold mb-4 tracking-tighter"
             variants={childVariant}
           >
             Hi, I'm <span className=" text-designColor">Azaz ali</span>
@@ -99,9 +99,9 @@ const Home = () => {
             className=" text-lg sm:text-xl mb-4"
             variants={childVariant}
           >
-            I use react packages for complex UI designs such as framer motion
-            and many more packages. I am a full stack developer with stack of
-            React and Firebase which is so powerfull and have high performance.
+            I am a full stack developer with stack of Next js and
+            supabase/MongoDB which is so powerfull and have high usage in
+            industry.
           </motion.p>
 
           <motion.div

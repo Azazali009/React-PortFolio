@@ -72,8 +72,8 @@ const HomeImage = () => {
           hash="LMGlI-Rj0gWV_NoJXnoz9tt7-9M{"
           width={300}
           height={300}
-          resolutionX={32}
-          resolutionY={32}
+          resolutionX={50}
+          resolutionY={50}
           punch={1}
         />
       </div>

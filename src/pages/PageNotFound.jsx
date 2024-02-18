@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function PageNotFound() {
   const navigate = useNavigate();
   return (
-    <div className=" h-56 items-center flex justify-center flex-col gap-6 dark:bg-bodyColor text-gray-400">
+    <div className=" h-56 items-center flex justify-center flex-col gap-6 dark:bg-bodyColor bg-gray-200 text-gray-400">
       <h1 className="  text-2xl sm:text-4xl font-bold  ">Page Not found</h1>
       <button
         onClick={() => navigate(-1, { replace: true })}

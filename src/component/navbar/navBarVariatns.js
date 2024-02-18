@@ -15,7 +15,6 @@ export const moblNavVariant = {
 export const navbarVariant = {
   hover: {
     scale: 1.2,
-    color: "#aaa",
     originX: 0,
     transition: { type: "spring", stiffness: 500 },
   },

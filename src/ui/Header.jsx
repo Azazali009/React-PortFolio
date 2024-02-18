@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../component/navbar/Navbar";
-// import LightModeIcon from "@mui/icons-material/LightMode";
-// import DarkModeIcon from "@mui/icons-material/DarkMode";
+
 import Logo from "./Logo";
+import AuthNav from "../component/authentication/AuthNav";
 
 const Header = () => {
   const [theme, setTheme] = useState("dark");
+  const [show, setShow] = useState("translate-y-0");
+  const [lastScroll, setLastScroll] = useState(0);
 
   useEffect(() => {
     if (localStorage.getItem("theme") === null) {
       localStorage.setItem(
         "theme",
         window.matchMedia("(prefers-color-scheme: dark)").matches,
-        "theme"
+        "theme",
       );
     }
   }, []);
@@ -38,8 +40,44 @@ const Header = () => {
     }
   };
 
+  // function controlNavbar() {
+  //   if (window.scrollY > 200) {
+  //     if (window.scrollY > lastScroll) {
+  //       setShow("-translate-y-[80px]");
+  //     } else {
+  //       setShow("shadow-lg");
+  //     }
+  //   } else {
+  //     setShow("translate-y-0");
+  //   }
+  //   setLastScroll(window.scrollY);
+  // }
+
+  useEffect(() => {
+    function controlNavbar() {
+      if (window.scrollY > 200) {
+        if (window.scrollY > lastScroll) {
+          setShow("-translate-y-[80px]");
+        } else {
+          setShow("shadow-lg");
+        }
+      } else {
+        setShow("translate-y-0");
+      }
+      setLastScroll(window.scrollY);
+    }
+    window.addEventListener("scroll", controlNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScroll]);
+
   return (
-    <div className=" font-primary bg-gray-200 dark:bg-bodyColor text-lightText flex justify-between shadow-md sticky top-0 z-10 items-center px-1 sm:px-4 h-20 dark:border-gray-800 border-b-2">
+    // <header className=" font-primary bg-gray-200 dark:bg-bodyColor text-lightText flex justify-between shadow-md sticky top-0 z-10 items-center px-1 sm:px-4 h-20 dark:border-gray-800 border-b-2">
+    <header
+      className={` ${show} sticky top-0 z-10 flex h-20 items-center justify-between border-b border-gray-300 bg-gray-200 px-1 font-primary text-lightText  transition-transform duration-700  dark:border-gray-800 dark:bg-bodyColor sm:px-4`}
+    >
       <div className=" flex items-center gap-3">
         <Logo />
         <button>
@@ -49,7 +87,7 @@ const Header = () => {
 
             {/* sun icon */}
             <svg
-              className="swap-on fill-designColor w-8 h-8"
+              className="swap-on h-8 w-8 fill-designColor"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -58,7 +96,7 @@ const Header = () => {
 
             {/* moon icon */}
             <svg
-              className="swap-off fill-sky-600 w-8 h-8"
+              className="swap-off h-8 w-8 fill-sky-600"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -68,7 +106,8 @@ const Header = () => {
         </button>
       </div>
       <Navbar />
-    </div>
+      <AuthNav />
+    </header>
   );
 };
 
