@@ -15,7 +15,7 @@ const Blog = () => {
       <h2 className=" py-12 text-center font-bold capitalize sm:text-5xl">
         No blog yet Posted.
       </h2>
-      {/* <ReadAllBlogs /> */}
+      <ReadAllBlogs />
     </motion.div>
   );
 };
