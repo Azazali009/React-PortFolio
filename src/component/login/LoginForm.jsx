@@ -34,11 +34,11 @@ const LoginForm = () => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit(onSubmit, onError)}
-      className="mt-3 grid w-full grid-cols-1 gap-y-2 rounded-xl px-8 py-10 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:max-w-2xl
+      className="mt-3 w-full space-y-6 rounded-xl px-8 py-10 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:max-w-2xl sm:space-y-12
       
       "
     >
-      <h2 className=" mb-3 text-center text-lg font-semibold capitalize text-emerald-500 dark:text-emerald-300 sm:text-3xl">
+      <h2 className=" mb-10 text-center text-lg font-semibold capitalize text-emerald-500 dark:text-emerald-300 sm:mb-16 sm:text-3xl">
         Login to your account
       </h2>
 
@@ -76,7 +76,7 @@ const LoginForm = () => {
         >
           login
         </button>
-        <div className="divider text-xs">OR</div>
+        <div className="divider text-xs sm:text-base">OR</div>
       </div>
       <div className=" flex justify-between">
         <p className="whitespace-nowrap text-xs font-light sm:text-base">
