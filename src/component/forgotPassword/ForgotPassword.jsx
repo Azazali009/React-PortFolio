@@ -1,9 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForgotPassword } from "./useForgotPassword";
 
 const ForgotPassword = () => {
+  const navigate = useNavigate();
   const { sentLink, isSending } = useForgotPassword();
   const {
     register,
@@ -16,12 +17,19 @@ const ForgotPassword = () => {
   };
   const onError = (err) => {};
   return (
-    <div className="min-h-screen w-full flex items-center justify-center dark:bg-bodyColor bg-gray-200 font-primary text-gray-500 dark:text-white">
-      <div className="dark:shadow-shadowOne shadow-shadowTwo p-6 rounded-xl">
-        <h2 className=" text-2xl font-medium mb-2 text-gray-600 dark:text-white ">
+    <div className="flex w-full justify-center bg-gray-200 font-primary text-gray-500 dark:bg-bodyColor dark:text-white">
+      <div className="mx-2 mt-6 h-fit rounded-xl p-3 shadow-shadowTwo dark:shadow-shadowOne sm:mx-0 sm:p-6">
+        <button
+          onClick={() => navigate(-1)}
+          className=" mb-5 rounded-md py-1.5 font-semibold"
+        >
+          {" "}
+          &larr; Back
+        </button>
+        <h2 className=" mb-2 text-2xl font-medium text-gray-600 dark:text-white ">
           Reset your password
         </h2>
-        <p className=" text-sm w-3/4 dark:text-gray-400 text-gray-500 font-semibold mb-8">
+        <p className=" mb-8 w-3/4 text-sm font-semibold text-gray-500 dark:text-gray-400">
           Type in your email and we'll send you a link to reset your password
         </p>
 
@@ -29,14 +37,14 @@ const ForgotPassword = () => {
           onSubmit={handleSubmit(onSubmit, onError)}
           className=" flex flex-col gap-2"
         >
-          <label className="dark:text-gray-400 text-gray-600  font-medium capitalize">
+          <label className="font-medium capitalize  text-gray-600 dark:text-gray-400">
             Email
           </label>
           <div className="flex flex-col gap-1">
             <input
               type="email"
               disabled={isSending}
-              className=" input input-bordered input-info dark:text-slate-50 text-slate-700  dark:bg-transparent bg-gray-200 input-sm"
+              className=" input-bordered input-info input input-sm bg-gray-200  text-slate-700 dark:bg-transparent dark:text-slate-50"
               {...register("email", {
                 required: "This field is required",
               })}
@@ -48,13 +56,13 @@ const ForgotPassword = () => {
           <div className="divider"></div>
           <button
             disabled={isSending}
-            className=" btn btn-sm btn-success capitalize hover:bg-opacity-70 duration-200"
+            className=" btn-success btn-sm btn capitalize duration-200 hover:bg-opacity-70"
           >
             sent reset email
           </button>
-          <p className=" text-center mt-4 text-sm text-gray-600 font-medium dark:text-gray-300">
+          <p className=" mt-4 text-center text-sm font-medium text-gray-600 dark:text-gray-300">
             already have an account?
-            <Link to={"/login"} className=" link capitalize link-info">
+            <Link to={"/login"} className=" link-info link capitalize">
               sign in
             </Link>
           </p>

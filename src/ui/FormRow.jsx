@@ -2,8 +2,10 @@ import React from "react";
 
 const FormRow = ({ children, lable, error, col }) => {
   return (
-    <div className={` grid grid-cols-1 gap-x-8 sm:grid-cols-[10rem_1fr]`}>
-      <label className=" font-normal capitalize leading-6 text-zinc-500 dark:text-white">
+    <div
+      className={` grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-[10rem_1fr]`}
+    >
+      <label className="font-normal capitalize leading-6 text-zinc-500 dark:text-white">
         {lable}:
       </label>
       <div className=" space-y-2">

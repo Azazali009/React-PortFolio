@@ -51,7 +51,7 @@ const Userdata = () => {
         onSubmit={handleSubmit}
         className=" grid grid-cols-1 gap-8 rounded-xl p-6 shadow-shadowTwo dark:shadow-shadowOne"
       >
-        <h2 className="text-center text-lg font-bold capitalize text-emerald-500 dark:text-emerald-300">
+        <h2 className="text-center text-lg font-bold capitalize text-sky-500 dark:text-sky-300">
           Modify your data
         </h2>
         <FormRow lable={"Email"} col={2}>
@@ -87,7 +87,7 @@ const Userdata = () => {
           <button
             disabled={isUpdating}
             type="submit"
-            className="btn flex min-w-[8rem] items-center justify-center bg-emerald-500 capitalize text-bodyColor hover:scale-95  disabled:text-bodyColor disabled:opacity-75 dark:bg-emerald-300"
+            className="btn flex min-w-[8rem] items-center justify-center border-none bg-sky-500 capitalize text-bodyColor  hover:scale-95 hover:bg-sky-600 disabled:text-bodyColor disabled:opacity-75 dark:bg-sky-300"
           >
             {isUpdating ? (
               <ColorRing

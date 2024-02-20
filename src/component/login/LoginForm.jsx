@@ -34,11 +34,11 @@ const LoginForm = () => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit(onSubmit, onError)}
-      className="mx-5 mt-3 w-full space-y-6 rounded-xl px-8 py-10 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:mx-0 sm:max-w-2xl sm:space-y-12
+      className="mx-5 mt-3 w-full space-y-6 rounded-xl px-3 py-10 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:mx-0 sm:max-w-2xl sm:space-y-12 sm:px-8
       
       "
     >
-      <h2 className=" mb-10 text-center text-lg font-semibold capitalize text-emerald-500 dark:text-emerald-300 sm:mb-16 sm:text-3xl">
+      <h2 className=" mb-10 text-center text-lg font-semibold capitalize text-sky-500 dark:text-sky-300 sm:mb-16 sm:text-3xl">
         Login to your account
       </h2>
 
@@ -46,7 +46,7 @@ const LoginForm = () => {
         <input
           type="email"
           placeholder="Enter email"
-          className="input-bordered input-info input input-sm w-full bg-white text-gray-800  dark:bg-zinc-800 dark:text-white sm:w-3/4 "
+          className="h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
           {...register("email", {
             required: "Field is required.",
             pattern: {
@@ -61,7 +61,7 @@ const LoginForm = () => {
         <input
           type="password"
           placeholder="Enter password"
-          className="input-bordered input-info input input-sm w-full bg-white text-gray-800 dark:bg-zinc-800 dark:text-white sm:w-3/4"
+          className="h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
           {...register("password", {
             required: "Field is required.",
           })}
@@ -78,18 +78,15 @@ const LoginForm = () => {
         </button>
         <div className="divider text-xs sm:text-base">OR</div>
       </div>
-      <div className=" flex justify-between">
-        <p className="whitespace-nowrap text-xs font-light sm:text-base">
+      <div className=" flex flex-col justify-between gap-4 sm:flex-row sm:gap-0">
+        <p className="whitespace-nowrap font-light">
           Do not have an account?
-          <Link
-            className="link-hover link ml-1 font-semibold underline  dark:link-info"
-            to={"/register"}
-          >
+          <Link className="link ml-2 capitalize text-sky-500" to={"/register"}>
             signup
           </Link>
         </p>
         <Link
-          className="link-hover link text-xs font-semibold underline dark:link-info sm:text-base"
+          className="link ml-2 capitalize text-sky-500"
           to={"/forgot-password"}
         >
           forgot password?

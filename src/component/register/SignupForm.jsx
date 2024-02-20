@@ -34,7 +34,7 @@ const SignupForm = () => {
       onSubmit={handleSubmit(onSubmit, onError)}
       className=" mx-3 grid w-full grid-cols-1 gap-y-10 rounded-xl px-8 py-4 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:mx-0 sm:w-3/5"
     >
-      <h2 className=" mb-3 text-center text-lg font-semibold capitalize text-emerald-400 sm:text-3xl">
+      <h2 className=" mb-3 text-center text-lg font-semibold capitalize text-sky-500 dark:text-sky-300 sm:text-3xl">
         Register your Account
       </h2>
 
@@ -42,7 +42,7 @@ const SignupForm = () => {
         <input
           type="text"
           placeholder="Enter email"
-          className="input-bordered input-info input input-sm w-full max-w-xs bg-white dark:bg-zinc-800"
+          className="h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
           {...register("name", {
             required: "Field is required.",
           })}
@@ -54,7 +54,7 @@ const SignupForm = () => {
           type="email"
           placeholder="Enter email"
           autoComplete="email"
-          className="input-bordered input-info input input-sm w-full max-w-xs bg-white dark:bg-zinc-800"
+          className="h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
           {...register("email", {
             required: "Field is required.",
             pattern: {
@@ -69,7 +69,7 @@ const SignupForm = () => {
         <input
           type="password"
           placeholder="Enter password"
-          className="input-bordered input-info input input-sm w-full max-w-xs bg-white dark:bg-zinc-800"
+          className="h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
           {...register("password", {
             required: "Field is required.",
             minLength: {
@@ -87,7 +87,7 @@ const SignupForm = () => {
         <input
           type="password"
           placeholder="Enter password"
-          className="input-bordered input-info input input-sm w-full max-w-xs bg-white dark:bg-zinc-800"
+          className="h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
           {...register("confirmPassword", {
             required: "Field is required.",
             validate: (value) =>

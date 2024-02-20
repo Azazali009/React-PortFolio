@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../image/dark-logo.png";
+import logo from "../image/logo.png";
 import { Link } from "react-router-dom";
 
 const Logo = () => {
