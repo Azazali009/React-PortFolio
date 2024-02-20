@@ -73,10 +73,15 @@ const MobileAuthNav = () => {
               <Link
                 className="btn-sm btn capitalize dark:btn-neutral"
                 to={"login"}
+                onClick={onClose}
               >
                 Login
               </Link>
-              <Link className="btn-info btn-sm btn capitalize" to={"register"}>
+              <Link
+                onClick={onClose}
+                className="btn-info btn-sm btn capitalize"
+                to={"register"}
+              >
                 signup
               </Link>
             </>

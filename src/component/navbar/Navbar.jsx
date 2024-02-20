@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <ul className=" hidden md:flex gap-4 dark:text-gray-300 text-gray-500  capitalize">
+        <ul className=" hidden gap-4 capitalize text-gray-500 dark:text-gray-300  md:flex">
           {NavData.map((item) => {
             return (
               <motion.li
@@ -23,7 +23,7 @@ const Navbar = () => {
                 whileHover="hover"
               >
                 <NavLink
-                  className=" outline-none rounded-sm font-medium focus:ring-2 px-2 py-1 border-none focus:ring-designColor  "
+                  className=" rounded-sm border-none px-2 py-1 font-medium outline-none focus:ring-2 focus:ring-designColor  "
                   to={item.link}
                 >
                   {item.name}
@@ -33,9 +33,9 @@ const Navbar = () => {
           })}
         </ul>
       </nav>
-      <div className="flex items-center gap-4 relative">
+      <div className="relative flex items-center gap-4">
         <motion.div
-          className="block md:hidden shadow-shadowTwo dark:shadow-shadowOne dark:bg-black rounded-full text-designColor"
+          className="block rounded-full text-designColor shadow-shadowTwo dark:bg-black dark:shadow-shadowOne md:hidden"
           variants={navbarVariant}
           whileHover="hover"
         >

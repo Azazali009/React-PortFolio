@@ -1,17 +1,16 @@
 import { AnimatePresence, motion } from "framer-motion";
-import CloseIcon from "@mui/icons-material/Close";
 import { NavLink } from "react-router-dom";
 import React, { useEffect } from "react";
 
 import { NavData } from "./NavData";
-import logo from "../../image/fvrt.jpg";
 import { moblNavVariant } from "./navBarVariatns";
 import HomeIcons from "../homeData/HomeIcons";
-import {useOutSideClick} from '../../hooks/useOutSideClick'
+import { useOutSideClick } from "../../hooks/useOutSideClick";
+import Logo from "../../ui/Logo";
 
 const MobileNav = ({ navbarVariant, setOpen }) => {
-  const onClose = ()=> setOpen(false)
-  const ref = useOutSideClick(onClose)
+  const onClose = () => setOpen(false);
+  const ref = useOutSideClick(onClose);
 
   useEffect(() => {
     document.body.style.overflowY = "hidden";
@@ -22,7 +21,7 @@ const MobileNav = ({ navbarVariant, setOpen }) => {
   return (
     <AnimatePresence>
       <motion.div
-        className=" absolute z-20 top-0 py-8 px-2 left-0 w-[75%] h-screen bg-gray-300 dark:bg-gray-900 overflow-scroll scrollBar-hide"
+        className=" scrollBar-hide absolute left-0 top-0 z-20 h-screen w-[75%] overflow-scroll bg-gray-300 px-2 py-8 dark:bg-gray-900"
         variants={moblNavVariant}
         initial="hidden"
         animate="visible"
@@ -30,14 +29,14 @@ const MobileNav = ({ navbarVariant, setOpen }) => {
         ref={ref}
       >
         <div className=" flex flex-col gap-4 text-gray-500 dark:text-gray-400">
-          <div className=" flex justify-between items-center">
+          {/* <div className=" flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img
-                className=" w-12 h-12 object-cover rounded-full border-gray-500 border-2"
+                className=" h-12 w-12 rounded-full border-2 border-gray-500 object-cover"
                 src={logo}
                 alt="Logo"
               />
-              <h1 className="font-bold text-2xl">Aizy</h1>
+              <h1 className="text-2xl font-bold">Aizy</h1>
             </div>
             <motion.button
               variants={navbarVariant}
@@ -46,14 +45,15 @@ const MobileNav = ({ navbarVariant, setOpen }) => {
             >
               <CloseIcon />
             </motion.button>
-          </div>
-          <p className=" text-sm sm:text-md sm:font-medium">
+          </div> */}
+          <Logo />
+          <p className=" sm:text-md text-sm sm:font-medium">
             I use react packages for complex UI designs such as framer motion
             and many more packages. I am a full stack developer with stack of
             React and Firebase which is so powerfull and have high performance.
           </p>
 
-          <ul className=" text-xl capitalize flex flex-col gap-4 mt-4 items-start">
+          <ul className=" mt-4 flex flex-col items-start gap-4 text-xl capitalize">
             {NavData.map((item) => (
               <motion.li
                 key={item.name}

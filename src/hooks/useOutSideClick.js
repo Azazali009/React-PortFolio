@@ -13,7 +13,7 @@ export const useOutSideClick = (handler) => {
 
       return () => document.removeEventListener("click", handleClick, true);
     },
-    [handler]
+    [handler],
   );
 
   return ref;

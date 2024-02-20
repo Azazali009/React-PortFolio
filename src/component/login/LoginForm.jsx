@@ -34,7 +34,7 @@ const LoginForm = () => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit(onSubmit, onError)}
-      className="mt-3 w-full space-y-6 rounded-xl px-8 py-10 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:max-w-2xl sm:space-y-12
+      className="mx-5 mt-3 w-full space-y-6 rounded-xl px-8 py-10 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:mx-0 sm:max-w-2xl sm:space-y-12
       
       "
     >

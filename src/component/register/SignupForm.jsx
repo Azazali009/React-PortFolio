@@ -32,7 +32,7 @@ const SignupForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit, onError)}
-      className=" grid w-full grid-cols-1 gap-y-10 rounded-xl px-8 py-4 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:w-3/5"
+      className=" mx-3 grid w-full grid-cols-1 gap-y-10 rounded-xl px-8 py-4 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:mx-0 sm:w-3/5"
     >
       <h2 className=" mb-3 text-center text-lg font-semibold capitalize text-emerald-400 sm:text-3xl">
         Register your Account
