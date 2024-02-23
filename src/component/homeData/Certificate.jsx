@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Certificate = ({ image, verifyUrl, pdfUrl }) => {
+const Certificate = ({ imageMin, imageWebp, verifyUrl, pdfUrl }) => {
   return (
     <div className=" group overflow-hidden rounded-lg p-6 shadow-shadowTwo transition-all duration-200 hover:shadow-none dark:shadow-shadowOne">
-      <img
-        className="w-full rounded-lg transition-all duration-300 group-hover:scale-105 "
-        src={image}
-        alt=""
-      />
+      <picture>
+        <source srcSet={imageWebp} type="image/webp" />
+        <source srcSet={imageMin} type="image/jpg" />
+        <img
+          className="w-full rounded-lg transition-all duration-300 group-hover:scale-105 "
+          src={imageMin}
+          alt=""
+        />
+      </picture>
 
       <div className=" mt-8 flex items-center gap-4">
         <Link
@@ -22,7 +26,7 @@ const Certificate = ({ image, verifyUrl, pdfUrl }) => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            class="h-6 w-6"
+            className="h-6 w-6"
           >
             <path
               strokeLinecap="round"
