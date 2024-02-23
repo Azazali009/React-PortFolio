@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Certificate = ({ imageMin, imageWebp, verifyUrl, pdfUrl }) => {
+  useEffect(() => {});
   return (
     <div className=" group overflow-hidden rounded-lg p-6 shadow-shadowTwo transition-all duration-200 hover:shadow-none dark:shadow-shadowOne">
       <picture>
@@ -16,7 +17,7 @@ const Certificate = ({ imageMin, imageWebp, verifyUrl, pdfUrl }) => {
 
       <div className=" mt-8 flex items-center gap-4">
         <Link
-          className="z-30 flex items-center gap-2 rounded-lg bg-gray-200 px-6 py-2  text-sm text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor  dark:shadow-shadowOne"
+          className=" z-30 flex items-center gap-2 rounded-lg bg-gray-200 px-6 py-2 text-sm  text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor dark:shadow-shadowOne  dark:hover:shadow-none"
           to={verifyUrl}
         >
           <span>Verify</span>
@@ -39,7 +40,7 @@ const Certificate = ({ imageMin, imageWebp, verifyUrl, pdfUrl }) => {
           to={pdfUrl}
           target="_blank"
           download
-          className=" z-30 rounded-lg bg-gray-200 px-6 py-2 text-sm text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor  dark:shadow-shadowOne"
+          className=" z-30 rounded-lg bg-gray-200 px-6 py-2 text-sm text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor dark:shadow-shadowOne hover:dark:shadow-none"
         >
           Download pdf
         </Link>
