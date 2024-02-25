@@ -48,7 +48,7 @@ const CreateBlog = ({ onClose }) => {
           <input
             type="text"
             placeholder="Enter Blog title"
-            className="h-12 w-full rounded-lg border-gray-700 bg-gray-100 p-4 text-gray-500  outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
+            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-100 p-4 text-gray-500 outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.title?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText  sm:w-3/4`}
             {...register("title", {
               required: "Field is required.",
             })}
@@ -72,7 +72,7 @@ const CreateBlog = ({ onClose }) => {
           <input
             type="text"
             placeholder="eg programming..."
-            className="h-12 w-full rounded-lg border-gray-700 bg-gray-100 p-4 text-gray-500 outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
+            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-100 p-4 text-gray-500 outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.category?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText  sm:w-3/4`}
             {...register("category", {
               required: "Field is required.",
             })}
