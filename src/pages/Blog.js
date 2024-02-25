@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { pageTransitionVariants } from "../animation variants/pageTransitionVariants";
-import ReadAllBlogs from "../component/blog/ReadAllBlogs";
+import Blogs from "../component/blog/Blogs";
 
 const Blog = () => {
   return (
@@ -12,10 +12,10 @@ const Blog = () => {
       animate="visible"
       exit="exit"
     >
-      <h2 className=" py-12 text-center font-bold capitalize sm:text-5xl">
+      {/* <h2 className=" py-12 text-center font-bold capitalize sm:text-5xl">
         No blog yet Posted.
-      </h2>
-      <ReadAllBlogs />
+      </h2> */}
+      <Blogs />
     </motion.div>
   );
 };

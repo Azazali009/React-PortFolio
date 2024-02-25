@@ -4,7 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useOutSideClick } from "../hooks/useOutSideClick";
 import { ModalVariant } from "../animation variants/ModalVariant";
 
-export default function Modal({ children, onClose, title }) {
+export default function Modal({
+  isLoading,
+  children,
+  onClose,
+  title,
+  size = "small",
+  cancelButtonType = "reset",
+}) {
   const ref = useOutSideClick(onClose);
 
   useEffect(() => {
@@ -15,28 +22,31 @@ export default function Modal({ children, onClose, title }) {
   }, []);
   return createPortal(
     <AnimatePresence>
-      <div className=" fixed z-50 top-0 left-0 bg-opacity-40 h-screen w-full backdrop-blur-lg flex items-center justify-center">
+      <div className=" fixed left-0 top-0 z-50 flex h-screen w-full items-center justify-center bg-opacity-40 backdrop-blur-lg">
         <motion.div
           variants={ModalVariant}
           initial="hidden"
           animate="visible"
           exit="hidden"
           ref={ref}
-          className=" no-scrollbar relative flex flex-col max-h-[calc(100vh-5em)] overflow-y-scroll gap-2 sm:gap-8 bg-white rounded-2xl p-6 w-[90%] lg:w-[50%]"
+          className={` no-scrollbar relative flex max-h-[calc(100vh-5em)] flex-col gap-2 overflow-y-scroll rounded-2xl bg-white p-6 sm:gap-8 ${size === "large" ? "w-[90%]" : " w-[90%] lg:w-[50%]"}`}
         >
           <button
             onClick={onClose}
-            className=" absolute right-1 top-1 font-semibold text-2xl leading-none outline-none border-none focus:ring-2 focus:ring-designColor text-gray-400 hover:bg-gray-200 h-8 w-8 rounded-full flex items-center justify-center pb-1"
+            disabled={isLoading}
+            className=" absolute right-1 top-1 flex h-8 w-8 items-center justify-center rounded-full border-none pb-1 text-2xl font-semibold leading-none text-gray-400 outline-none hover:bg-gray-200 focus:ring-2 focus:ring-designColor disabled:animate-pulse disabled:cursor-not-allowed disabled:text-red-500"
           >
             <span>&times;</span>
           </button>
-          <h2 className=" font-bold text-zinc-600 capitalize text-xl">
+          <h2 className=" text-xl font-bold capitalize text-zinc-600">
             {title}
           </h2>
-          <div className="  text-sm sm:text-lg text-gray-600 ">{children}</div>
+          <div className="  text-sm text-gray-600 sm:text-lg ">{children}</div>
           <div className=" self-end">
             <button
-              className=" px-4 text-lg text-red-50 outline-none border-none focus:ring-2 focus:ring-designColor focus:ring-offset-2 rounded-md bg-red-500 hover:bg-red-600 py-1.5 capitalize font-semibold "
+              type={cancelButtonType}
+              disabled={isLoading}
+              className=" rounded-md border-none bg-red-500 px-4 py-1.5 text-lg font-semibold capitalize text-red-50 outline-none hover:bg-red-600 focus:ring-2 focus:ring-designColor focus:ring-offset-2 "
               onClick={onClose}
             >
               cancel
@@ -45,6 +55,6 @@ export default function Modal({ children, onClose, title }) {
         </motion.div>
       </div>
     </AnimatePresence>,
-    document.body
+    document.body,
   );
 }

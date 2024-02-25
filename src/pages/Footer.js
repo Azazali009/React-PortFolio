@@ -7,7 +7,7 @@ import HomeIcons from "../component/homeData/HomeIcons";
 const Footer = ({ setOpenModal }) => {
   const curYear = new Date().getFullYear();
   return (
-    <div className=" min-h-screen w-full bg-gray-200 p-10 font-primary dark:bg-bodyColor dark:text-lightText ">
+    <div className=" min-h-screen w-full border-t-2 border-gray-300 bg-gray-200 p-10 font-primary dark:border-zinc-800 dark:bg-bodyColor dark:text-lightText ">
       <div className=" grid grid-cols-1 gap-y-24 pt-8 sm:grid-cols-2 sm:justify-items-center md:grid-cols-3">
         {/* Footer logo */}
         <div className="">

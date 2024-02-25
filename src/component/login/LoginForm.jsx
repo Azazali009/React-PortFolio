@@ -41,12 +41,12 @@ const LoginForm = () => {
       <h2 className=" mb-10 text-center text-lg font-semibold capitalize text-sky-500 dark:text-sky-300 sm:mb-16 sm:text-3xl">
         Login to your account
       </h2>
-
+      {/* focus-visible:outline-designColor */}
       <FormRow lable="email" error={errors?.email?.message}>
         <input
           type="email"
           placeholder="Enter email"
-          className="h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
+          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.email?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
           {...register("email", {
             required: "Field is required.",
             pattern: {
@@ -61,7 +61,7 @@ const LoginForm = () => {
         <input
           type="password"
           placeholder="Enter password"
-          className="h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4"
+          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.password?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
           {...register("password", {
             required: "Field is required.",
           })}
@@ -72,7 +72,7 @@ const LoginForm = () => {
         <button
           disabled={isPending}
           type="submit"
-          className="sm:text-bas btn-info btn-sm btn w-full text-xs sm:btn-md hover:bg-opacity-75"
+          className="sm:text-bas btn-info btn-sm btn w-full text-xs transition-all duration-500 sm:btn-md hover:bg-opacity-75"
         >
           login
         </button>

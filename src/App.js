@@ -18,6 +18,7 @@ import { Toaster } from "react-hot-toast";
 import UserAccount from "./component/user/UserAccount";
 import ForgotPassword from "./component/forgotPassword/ForgotPassword";
 import RecoverPassword from "./component/forgotPassword/RecoverPassword";
+import DetailBlog from "./component/blog/DetailBlog";
 
 // Dynamic imports
 const Home = lazy(() => import("./pages/Home"));
@@ -63,7 +64,7 @@ function App() {
               duration: 5000,
             },
             style: {
-              fontSize: "16px",
+              fontSize: "12px",
               maxWidth: "500px",
               padding: "10px 24px",
               fontWeight: "500",
@@ -85,6 +86,8 @@ function App() {
                 <Route path="experience" element={<Experience />} />
               </Route>
               <Route path="blog" element={<Blog />} />
+              <Route path="blog/:blogId" element={<DetailBlog />} />
+
               <Route path="contacts" element={<Contacts />} />
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />

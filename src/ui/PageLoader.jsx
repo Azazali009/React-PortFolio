@@ -3,7 +3,7 @@ import React from "react";
 
 const PageLoader = () => {
   return (
-    <div className=" bg-bodyColor min-h-screen flex items-center justify-center">
+    <div className=" flex min-h-screen items-center justify-center bg-gray-200 dark:bg-bodyColor">
       <RotatingTriangles height={50} color="white" />
     </div>
   );

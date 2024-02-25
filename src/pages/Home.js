@@ -34,7 +34,7 @@ const Home = () => {
       animate="visible"
       exit="exit"
     >
-      <div className=" mb-36 flex flex-col items-center justify-between gap-8 border-b-2 border-t-2 border-gray-300 border-opacity-50 py-16 pb-24 dark:border-gray-900 sm:px-4 lg:flex-row lg:items-center lg:gap-16">
+      <div className=" mb-36 flex flex-col items-center justify-between gap-8 border-b-2 border-gray-300 border-opacity-50 py-16 pb-24 dark:border-gray-900 sm:px-4 lg:flex-row lg:items-center lg:gap-16">
         {/* Home left side */}
 
         <HomeLeft />
