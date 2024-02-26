@@ -40,19 +40,6 @@ const Header = () => {
     }
   };
 
-  // function controlNavbar() {
-  //   if (window.scrollY > 200) {
-  //     if (window.scrollY > lastScroll) {
-  //       setShow("-translate-y-[80px]");
-  //     } else {
-  //       setShow("shadow-lg");
-  //     }
-  //   } else {
-  //     setShow("translate-y-0");
-  //   }
-  //   setLastScroll(window.scrollY);
-  // }
-
   useEffect(() => {
     function controlNavbar() {
       if (window.scrollY > 200) {

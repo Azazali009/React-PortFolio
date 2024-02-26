@@ -8,7 +8,7 @@ export function useCreateBlog() {
     mutationFn: createBlog,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["Blogs"] });
-      toast.success("Blog created successfully/");
+      toast.success("Blog created successfully.");
     },
     onError: (err) => {
       toast.error(err.message);

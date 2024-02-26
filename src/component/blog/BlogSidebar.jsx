@@ -14,16 +14,16 @@ const BlogSidebar = () => {
   };
   return (
     <aside className=" sticky top-24 hidden flex-col gap-3 self-start border-l border-gray-200 px-3 dark:bg-bodyColor sm:flex ">
-      <form onSubmit={handleSubmit} className=" flex">
+      <form onSubmit={handleSubmit} className=" flex items-center">
         <input
           type="text"
           value={searchInput}
           required
           onChange={(e) => setSearchInput(e.target.value)}
           placeholder="search blog..."
-          className="input-info input w-full bg-gray-200 py-2"
+          className=" input-info input h-8 w-full rounded border-none bg-gray-200"
         />
-        <button className="rounded bg-sky-500 px-6 py-2 font-semibold capitalize tracking-wider text-white">
+        <button className=" rounded bg-sky-500 px-6 py-2 font-semibold capitalize tracking-wider text-white">
           search
         </button>
       </form>

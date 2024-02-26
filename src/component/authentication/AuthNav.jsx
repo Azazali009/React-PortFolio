@@ -12,7 +12,7 @@ const Auth = () => {
 
   if (isLoading)
     return (
-      <div className="flex gap-3">
+      <div className="hidden gap-3 sm:flex">
         <div className=" h-10 w-20 animate-pulse rounded-lg bg-gray-300"></div>
         <div className=" h-10 w-20 animate-pulse rounded-lg bg-gray-300"></div>
       </div>

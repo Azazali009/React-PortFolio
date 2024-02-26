@@ -7,7 +7,7 @@ const BackCircleBtn = () => {
   return (
     <button
       onClick={() => navigate(-1)}
-      className=" ml-4 flex aspect-square w-16 items-center justify-center rounded-full border-none bg-gray-200 font-semibold capitalize text-gray-500 shadow-shadowTwo duration-300 hover:shadow-none active:translate-y-2 dark:bg-black dark:bg-opacity-25 dark:text-white dark:shadow-shadowOne"
+      className=" ml-4 flex aspect-square w-16 items-center justify-center rounded-full border-none bg-gray-200 font-semibold capitalize text-gray-500 shadow-shadowTwo transition-all duration-300 hover:text-designColor hover:shadow-none active:translate-y-2 dark:bg-black dark:bg-opacity-25 dark:text-white dark:shadow-shadowOne dark:hover:text-designColor dark:hover:shadow-none"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

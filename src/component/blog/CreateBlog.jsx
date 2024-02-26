@@ -8,11 +8,13 @@ import { useCreateBlog } from "./useCreateBlog";
 import { useCurrentUser } from "../authentication/useCurrentUser";
 import { toolbarOptions } from "./ToolBarOptions";
 import Modal from "../../ui/Modal";
+import { useNavigate } from "react-router-dom";
 
 const module = {
   toolbar: toolbarOptions,
 };
 const CreateBlog = ({ onClose }) => {
+  const navigate = useNavigate();
   const { addBlog, isPending } = useCreateBlog();
   const { user: { user_metadata: { name: authorName, avatar } = {} } = {} } =
     useCurrentUser();
@@ -20,18 +22,26 @@ const CreateBlog = ({ onClose }) => {
     register,
     control,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     const image = data.blogImage[0];
-    addBlog({
-      ...data,
-      blogImage: image,
-      author: authorName,
-      authorImage: avatar,
-    });
+    addBlog(
+      {
+        ...data,
+        blogImage: image,
+        author: authorName,
+        authorImage: avatar,
+      },
+      {
+        onSuccess: () => {
+          reset();
+          navigate("/blog");
+        },
+      },
+    );
   };
   return (
     <Modal

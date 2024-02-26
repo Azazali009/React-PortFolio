@@ -7,7 +7,7 @@ import HomeIcons from "../component/homeData/HomeIcons";
 const Footer = ({ setOpenModal }) => {
   const curYear = new Date().getFullYear();
   return (
-    <div className=" min-h-screen w-full border-t-2 border-gray-300 bg-gray-200 p-10 font-primary dark:border-zinc-800 dark:bg-bodyColor dark:text-lightText ">
+    <div className=" relative min-h-screen w-full border-t-2 border-gray-300 bg-gray-200 p-10 font-primary dark:border-zinc-800 dark:bg-bodyColor dark:text-lightText ">
       <div className=" grid grid-cols-1 gap-y-24 pt-8 sm:grid-cols-2 sm:justify-items-center md:grid-cols-3">
         {/* Footer logo */}
         <div className="">
@@ -19,8 +19,8 @@ const Footer = ({ setOpenModal }) => {
         <Developer setOpenModal={setOpenModal} />
         <ResourceLinks setOpenModal={setOpenModal} />
       </div>
-      <p className=" mx-auto my-4 text-center text-sm text-gray-500 sm:text-lg">
-        &copy;{curYear}. All rights reserved by Azaz ali
+      <p className=" absolute bottom-0 left-[50%] mx-auto my-4 -translate-x-[50%] text-center text-sm text-gray-500  sm:text-lg">
+        copyright &copy;{curYear}. All rights reserved by Azaz ali
       </p>
     </div>
   );
