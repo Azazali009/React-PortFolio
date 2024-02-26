@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { pageTransitionVariants } from "../animation variants/pageTransitionVariants";
+// import { motion } from "framer-motion";
+// import { pageTransitionVariants } from "../animation variants/pageTransitionVariants";
 import Blogs from "../component/blog/Blogs";
 
 const Blog = () => {
