@@ -1,14 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import { getBlogs } from "../../services/apiBlog";
+import { useSearchParams } from "react-router-dom";
 
 export function useBlogs() {
-  const {
+  const [searchParams] = useSearchParams();
+  const searchInput = searchParams.get("search") || "";
+
+  let {
     data: Blogs,
     isLoading,
     isError,
   } = useQuery({
     queryKey: ["Blogs"],
-    queryFn: getBlogs,
+    queryFn: () => getBlogs(searchInput),
   });
-  return { Blogs, isLoading, isError };
+  const filterBlogs = Blogs?.filter((blog) =>
+    blog.title.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
+      ? blog
+      : null,
+  );
+  console.log(filterBlogs);
+  return { filterBlogs, isLoading, isError };
 }
