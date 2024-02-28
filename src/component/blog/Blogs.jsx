@@ -30,7 +30,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className=" grid min-h-screen py-8 sm:grid-cols-[2fr_10rem] md:grid-cols-[2fr_20rem]">
+    <div className=" grid min-h-screen grid-cols-1 gap-y-12 py-8 md:grid-cols-[2fr_20rem]  md:gap-y-0">
       <div className=" relative">
         <div className=" flex justify-between">
           {!isLoadingUser && isAuthenticated && isAdmin && (

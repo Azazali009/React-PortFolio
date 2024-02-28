@@ -34,6 +34,7 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className="relative flex items-center gap-4">
+        <MobileAuthNav />
         <motion.div
           className="block rounded-full text-designColor shadow-shadowTwo dark:bg-black dark:shadow-shadowOne md:hidden"
           variants={navbarVariant}
@@ -41,8 +42,6 @@ const Navbar = () => {
         >
           <Hamburger size={20} toggled={showNav} toggle={setOpen} />
         </motion.div>
-
-        <MobileAuthNav />
       </div>
       {showNav && <MobileNav navbarVariant={navbarVariant} setOpen={setOpen} />}
     </>

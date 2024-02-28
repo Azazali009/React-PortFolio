@@ -31,7 +31,7 @@ body {
 }
 
 .contactInput {
-  @apply h-12 rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none;
+  @apply h-12 rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none;
 }
 
 .contactLabel {
@@ -45,17 +45,21 @@ body {
   @apply mt-16 px-2 md:px-0;
 }
 .blog-content h1 {
-  @apply text-3xl;
+  @apply text-3xl font-semibold;
 }
 .blog-content h2 {
-  @apply text-2xl;
+  @apply text-2xl font-semibold;
 }
 .blog-content h3 {
-  @apply text-xl;
+  @apply text-xl font-semibold;
 }
 .blog-content p {
-  @apply text-lg text-gray-500 dark:text-gray-200;
+  @apply text-sm text-gray-500 dark:text-gray-200 sm:text-lg;
 }
+.blog-content img {
+  @apply w-[85%] sm:w-[70%];
+}
+
 .blog-content ul,
 ol {
   @apply list-decimal;

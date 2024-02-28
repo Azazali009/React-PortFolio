@@ -7,20 +7,20 @@ import { pageTransitionVariants } from "../animation variants/pageTransitionVari
 const Contacts = () => {
   return (
     <motion.div
-      className=" bg-gray-300 dark:bg-bodyColor min-h-screen sm:p-8 font-primary"
+      className=" min-h-screen bg-gray-200 pb-20 font-primary dark:bg-bodyColor sm:p-8"
       variants={pageTransitionVariants}
       initial="hidden"
       animate="visible"
       exit="exit"
     >
-      <div className=" my-b text-center py-10">
-        <p className=" text-designColor uppercase text-lg ">contact</p>
-        <h2 className="text-gray-500 dark:text-lightText font-bold text-2xl sm:text-5xl capitalize">
+      <div className=" my-b py-10 text-center">
+        <p className=" text-lg uppercase text-designColor ">contact</p>
+        <h2 className="text-2xl font-bold capitalize text-gray-500 dark:text-lightText sm:text-5xl">
           Contact With Me
         </h2>
       </div>
 
-      <div className=" flex flex-col lg:flex-row items-start dark:text-gray-400 p-2 xl:p-9 gap-16">
+      <div className=" flex flex-col items-start gap-16 p-2 dark:text-gray-400 lg:flex-row xl:p-9">
         <ContactImage />
         <ContactForm />
       </div>

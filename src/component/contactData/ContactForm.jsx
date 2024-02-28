@@ -34,7 +34,7 @@ const ContactForm = () => {
           "service_dusfn7m",
           "template_l0rigkp",
           form.current,
-          "P52HfsYa2qxaxU2qg"
+          "P52HfsYa2qxaxU2qg",
         );
         setErrMsg("Your message has been sent successfully.");
         setTimeout(() => {
@@ -56,10 +56,10 @@ const ContactForm = () => {
     setLoading(false);
   };
   return (
-    <div className=" w-full lg:w-[60%] p-4 sm:p-12 dark:shadow-shadowOne shadow-shadowTwo  rounded-xl">
+    <div className=" w-full rounded-xl p-4 shadow-shadowTwo dark:shadow-shadowOne sm:p-12  lg:w-[60%]">
       <form
         ref={form}
-        className=" flex flex-col gap-8 text-gray-400"
+        className=" flex flex-col gap-8 pb-12 text-gray-400"
         onSubmit={handleSubmit}
       >
         {errMsg && (
@@ -68,13 +68,13 @@ const ContactForm = () => {
               errMsg === "Your message has been sent successfully."
                 ? "text-green-500"
                 : "text-orange-600"
-            } text-center p-4 dark:shadow-shadowOne shadow-shadowTwo text-xl tracking-wide animate-bounce `}
+            } animate-bounce p-4 text-center text-xl tracking-wide shadow-shadowTwo dark:shadow-shadowOne `}
           >
             {errMsg}
           </p>
         )}
-        <div className=" flex flex-col md:flex-row gap-10">
-          <div className="flex flex-col gap-4 w-full sm:w-[50%]">
+        <div className=" flex flex-col gap-10 md:flex-row">
+          <div className="flex w-full flex-col gap-4 sm:w-[50%]">
             <label className=" contactLabel" htmlFor="name">
               Your Name
             </label>
@@ -87,7 +87,7 @@ const ContactForm = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="flex flex-col gap-4 w-full sm:w-[50%]">
+          <div className="flex w-full flex-col gap-4 sm:w-[50%]">
             <label className=" contactLabel" htmlFor="phoneNumber">
               Phone Number
             </label>
@@ -101,7 +101,7 @@ const ContactForm = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-4 w-full">
+        <div className="flex w-full flex-col gap-4">
           <label className="contactLabel" htmlFor="email">
             Email
           </label>
@@ -114,12 +114,12 @@ const ContactForm = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="flex flex-col gap-4 w-full">
+        <div className="flex w-full flex-col gap-4">
           <label className=" contactLabel" htmlFor="message">
             Message
           </label>
           <textarea
-            className=" bg-gray-300 shadow-shadowTwo dark:shadow-none dark:bg-[#191b1e] resize-none border-gray-700 dark:border-b-[1px] rounded-lg outline-none focus-visible:outline-designColor focus-visible:border-b-transparent p-4 text-gray-500 dark:text-lightText outline-offset-2"
+            className=" resize-none rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent focus-visible:outline-designColor dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none"
             name="message"
             id="message"
             cols="30"
@@ -129,13 +129,13 @@ const ContactForm = () => {
           ></textarea>
         </div>
         {!loading ? (
-          <button className="text-gray-500 hover:scale-95 duration-200 dark:text-gray-200 font-medium bg-gray-300 shadow-shadowTwo dark:shadow-none dark:bg-[#191b1e] p-4 text-center rounded-lg text-lg uppercase">
+          <button className="rounded-lg bg-gray-200 p-4 text-center text-lg font-medium uppercase text-gray-500 shadow-shadowTwo duration-200 hover:scale-95 dark:bg-[#191b1e] dark:text-gray-200 dark:shadow-none">
             send
           </button>
         ) : (
           <button
             disabled
-            className=" flex justify-center text-gray-500 hover:scale-95 duration-200 dark:text-gray-200 font-medium bg-gray-300 shadow-shadowTwo dark:shadow-none dark:bg-[#191b1e] p-4 text-center rounded-lg text-lg uppercase disabled:cursor-not-allowed disabled:hover:scale-100"
+            className=" flex justify-center rounded-lg bg-gray-200 p-4 text-center text-lg font-medium uppercase text-gray-500 shadow-shadowTwo duration-200 hover:scale-95 disabled:cursor-not-allowed disabled:hover:scale-100 dark:bg-[#191b1e] dark:text-gray-200 dark:shadow-none"
           >
             <ColorRing height={40} />
           </button>
@@ -147,7 +147,7 @@ const ContactForm = () => {
               errMsg === "Your message has been sent successfully."
                 ? "text-green-500"
                 : "text-orange-600"
-            } text-center p-4 dark:shadow-shadowOne shadow-shadowTwo text-xl tracking-wide animate-bounce `}
+            } animate-bounce p-4 text-center text-xl tracking-wide shadow-shadowTwo dark:shadow-shadowOne `}
           >
             {errMsg}
           </p>

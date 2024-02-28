@@ -2,14 +2,14 @@ import React from "react";
 
 const DetailBlogImage = ({ blogImage, category, author }) => {
   return (
-    <figure className="flex flex-col items-center text-center">
+    <figure className="flex flex-col items-center overflow-hidden text-center">
       <img
-        className=" w-full text-center sm:w-[70%]"
+        className="w-full rounded-md object-cover px-3 sm:h-[500px]"
         src={blogImage}
         alt="Blog post"
       />
-      <figcaption className=" flex flex-wrap gap-3">
-        <span className="flex gap-1">
+      <figcaption className=" mt-2 flex flex-wrap gap-3">
+        <span className="flex gap-1 font-medium">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

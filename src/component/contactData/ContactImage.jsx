@@ -18,7 +18,7 @@ const ContactImage = () => {
   }, []);
 
   return (
-    <div className=" w-full lg:w-[35%] text-lg flex flex-col gap-4 p-8 rounded-xl group dark:shadow-shadowOne shadow-shadowTwo overflow-hidden">
+    <div className=" group flex w-full flex-col gap-4 overflow-hidden rounded-xl p-8 text-lg text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne lg:w-[35%]">
       <div className={`${imageLoader ? " hidden" : " inline"}`}>
         <Blurhash
           hash="LGGHl75S+]R6NK}?xta00h=w-TkV"
@@ -37,22 +37,20 @@ const ContactImage = () => {
           loading="lazy"
           className={` ${
             imageLoader ? " inline" : "hidden"
-          } w-full rounded-xl  mb-6 group-hover:scale-110 duration-300`}
+          } mb-6 w-full  rounded-xl duration-300 group-hover:scale-110`}
           src={contactMin}
           alt="Contact"
         />
       </picture>
 
-      <h3 className=" text-4xl font-bold text-gray-500 dark:text-white capitalize">
-        Azaz ali
-      </h3>
+      <h3 className=" text-4xl font-bold capitalize ">Azaz ali</h3>
       <p>Full stack developer</p>
       <p>
         'No Stack to Full stack'. Full stack development with technlogoies and
         languages are React js for frontend and Firebase for backend.
       </p>
       <div className=" flex flex-col sm:flex-row sm:items-center sm:gap-2">
-        <p className=" capitalize text-xl">phone :</p>
+        <p className=" text-xl capitalize">phone :</p>
         <Link
           className=" text-gray-500 dark:text-lightText"
           to={"tel:+923163516009"}
@@ -61,7 +59,7 @@ const ContactImage = () => {
         </Link>
       </div>
       <div className=" flex flex-col sm:flex-row sm:items-center  sm:gap-2">
-        <p className=" capitalize text-xl">Email:</p>
+        <p className=" text-xl capitalize">Email:</p>
         <Link
           className=" text-gray-500 dark:text-lightText"
           to={"mailto:azazalideveloper@gmail.com"}

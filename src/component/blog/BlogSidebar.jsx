@@ -13,7 +13,7 @@ const BlogSidebar = () => {
     setSearchParams(searchParams);
   };
   return (
-    <aside className=" sticky top-24 hidden flex-col gap-3 self-start border-l border-gray-200 px-3 dark:bg-bodyColor sm:flex ">
+    <aside className=" flex flex-col gap-3 self-start border-l border-gray-200 px-3 [grid-row:1] dark:bg-bodyColor md:sticky md:top-24 md:[grid-column:2/3] ">
       <form onSubmit={handleSubmit} className=" flex items-center">
         <input
           type="text"

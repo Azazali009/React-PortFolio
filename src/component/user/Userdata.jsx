@@ -80,7 +80,7 @@ const Userdata = () => {
             disabled={isUpdating}
             accept="image/*"
             onChange={(e) => setAvatar(e.target.files[0])}
-            className="file-input-bordered file-input-accent file-input file-input-xs w-full max-w-xs bg-gray-300 text-black sm:file-input-md dark:bg-white"
+            className="file-input-bordered file-input-accent file-input file-input-md bg-gray-300 text-black sm:file-input-md dark:bg-white"
           />
         </FormRow>
         <div className=" mt-8 flex gap-3 justify-self-end">
