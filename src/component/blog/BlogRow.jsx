@@ -5,10 +5,10 @@ const BlogRow = ({ blogContent }) => {
   const { title, blogImage, author, id } = blogContent;
 
   return (
-    <div className="bg-gray-200 px-3 py-6 text-gray-500 shadow-shadowTwo duration-300 hover:shadow-none dark:bg-bodyColor dark:text-gray-200 dark:shadow-shadowOne dark:hover:shadow-none">
+    <div className="rounded-md bg-gray-200 px-3 py-6 text-gray-500 shadow-shadowTwo duration-300 hover:shadow-none dark:bg-bodyColor dark:text-gray-200 dark:shadow-shadowOne dark:hover:shadow-none">
       <div className=" flex gap-5">
         <img
-          className=" aspect-square w-20 rounded-md object-cover sm:w-40"
+          className=" aspect-square w-20 rounded-md border border-gray-300 object-cover dark:border-gray-800 sm:w-40"
           src={blogImage}
           alt="blog"
         />
@@ -22,7 +22,7 @@ const BlogRow = ({ blogContent }) => {
           </p>
           <Link
             to={`/blog/${id}`}
-            className=" link mt-8 block text-blue-500 hover:no-underline"
+            className=" link mt-8 block w-fit text-blue-500 hover:no-underline"
           >
             Learn more
           </Link>

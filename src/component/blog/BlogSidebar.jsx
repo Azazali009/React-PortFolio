@@ -13,7 +13,7 @@ const BlogSidebar = () => {
     setSearchParams(searchParams);
   };
   return (
-    <aside className=" flex flex-col gap-3 self-start border-l border-gray-200 px-3 [grid-row:1] dark:bg-bodyColor md:sticky md:top-24 md:[grid-column:2/3] ">
+    <aside className=" flex flex-col gap-3 self-start px-3 [grid-row:1] dark:bg-bodyColor md:sticky md:top-24 md:[grid-column:2/3] ">
       <form onSubmit={handleSubmit} className=" flex items-center">
         <input
           type="text"
@@ -21,7 +21,7 @@ const BlogSidebar = () => {
           required
           onChange={(e) => setSearchInput(e.target.value)}
           placeholder="search blog..."
-          className=" input-info input h-8 w-full rounded border-none bg-gray-200"
+          className=" input-info input h-8 w-full rounded border-none bg-gray-200 dark:bg-bodyColor"
         />
         <button className=" rounded bg-sky-500 px-6 py-2 font-semibold capitalize tracking-wider text-white">
           search

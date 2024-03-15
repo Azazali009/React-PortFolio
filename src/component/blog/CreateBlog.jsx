@@ -52,13 +52,13 @@ const CreateBlog = ({ onClose }) => {
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" flex max-w-[80%] flex-col gap-4"
+        className=" flex max-w-[80%] flex-col gap-4 font-primary"
       >
         <FormRow lable={"Blog title"} error={errors?.title?.message}>
           <input
             type="text"
             placeholder="Enter Blog title"
-            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-100 p-4 text-gray-500 outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.title?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText  sm:w-3/4`}
+            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-100 p-4 text-gray-500 outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.title?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"}   sm:w-3/4`}
             {...register("title", {
               required: "Field is required.",
             })}
@@ -82,7 +82,7 @@ const CreateBlog = ({ onClose }) => {
           <input
             type="text"
             placeholder="eg programming..."
-            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-100 p-4 text-gray-500 outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.category?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText  sm:w-3/4`}
+            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-100 p-4 text-gray-500 outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.category?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"}  sm:w-3/4`}
             {...register("category", {
               required: "Field is required.",
             })}
@@ -104,7 +104,7 @@ const CreateBlog = ({ onClose }) => {
         <div className=" mt-6">
           <button
             disabled={isPending}
-            className="btn flex min-w-[8rem] items-center justify-center border-none bg-sky-500 capitalize text-bodyColor hover:scale-95 hover:bg-sky-600 disabled:bg-sky-500 disabled:text-bodyColor disabled:opacity-50 dark:bg-sky-300"
+            className="btn flex min-w-[8rem] items-center justify-center border-none bg-sky-500  font-semibold uppercase text-bodyColor hover:scale-95 hover:bg-sky-600 disabled:bg-sky-500 disabled:text-bodyColor disabled:opacity-50"
             type="submit"
           >
             submit

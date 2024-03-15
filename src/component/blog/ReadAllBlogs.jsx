@@ -6,7 +6,6 @@ import SubPageLoader from "../../ui/SubPageLoader";
 
 const ReadAllBlogs = () => {
   const { filterBlogs, isLoading, isError } = useBlogs();
-
   if (isLoading) return <SubPageLoader />;
   if (isError) return <Error />;
 

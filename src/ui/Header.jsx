@@ -67,7 +67,7 @@ const Header = () => {
     >
       <div className=" flex items-center gap-3">
         <Logo />
-        <button>
+        <button aria-label="toggle dark mode">
           {/* dark&light mode */}
           <label className="swap swap-rotate">
             <input type="checkbox" onChange={handleTheme} />

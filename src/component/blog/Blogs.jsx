@@ -3,9 +3,10 @@ import CreateBlog from "./CreateBlog";
 import ReadAllBlogs from "./ReadAllBlogs";
 import BlogSidebar from "./BlogSidebar";
 import { useCurrentUser } from "../authentication/useCurrentUser";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Blogs = () => {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const searchInput = searchParams.get("search") || "";
 
@@ -27,15 +28,16 @@ const Blogs = () => {
   const handleSearchFilter = () => {
     searchParams.set("search", "");
     setSearchParams(searchParams);
+    navigate("/blog");
   };
 
   return (
-    <div className=" grid min-h-screen grid-cols-1 gap-y-12 py-8 md:grid-cols-[2fr_20rem]  md:gap-y-0">
+    <div className=" grid min-h-screen grid-cols-1 gap-y-12 py-8 font-primary md:grid-cols-[2fr_20rem] md:gap-y-0">
       <div className=" relative">
         <div className=" flex justify-between">
           {!isLoadingUser && isAuthenticated && isAdmin && (
             <button
-              className="btn-info btn ml-4"
+              className="btn-info btn ml-4 duration-300 hover:opacity-75 active:scale-90"
               onClick={() => setShowModal(true)}
             >
               Create blog post
@@ -45,14 +47,14 @@ const Blogs = () => {
             <div className=" absolute right-2 top-2">
               <button
                 onClick={handleSearchFilter}
-                className=" flex w-fit items-center gap-1 bg-none px-6 text-lg font-normal capitalize text-[#CC0000] hover:underline "
+                className=" flex w-fit items-center gap-1 bg-none px-6 text-lg font-normal capitalize text-designColor hover:underline "
               >
                 clear filter
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth="1.5"
+                  strokeWidth="2.5"
                   stroke="currentColor"
                   className="h-4 w-4"
                 >
