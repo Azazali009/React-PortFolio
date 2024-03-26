@@ -10,6 +10,9 @@ import MobileAuthNav from "../authentication/MobileAuthNav";
 
 const Navbar = () => {
   const [showNav, setOpen] = useState(false);
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <>
@@ -23,6 +26,7 @@ const Navbar = () => {
                 whileHover="hover"
               >
                 <NavLink
+                  onClick={handleScrollToTop}
                   className=" rounded-sm border-none px-2 py-1 font-medium outline-none focus:ring-2 focus:ring-designColor  "
                   to={item.link}
                 >

@@ -16,7 +16,7 @@ const Author = ({ authorImage, author }) => {
           </h1>
           <p>80 Followers</p>
           <Link
-            className=" text-sm hover:underline sm:text-base"
+            className=" text-sm text-sky-500 underline hover:no-underline sm:text-base"
             to={"https://www.linkedin.com/in/azaz-ali-7209042a6/"}
           >
             https://www.linkedin.com/in/azaz-ali-7209042a6/
