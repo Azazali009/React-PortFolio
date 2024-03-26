@@ -17,7 +17,7 @@ const Certificate = ({ imageMin, imageWebp, verifyUrl, pdfUrl }) => {
 
       <div className=" mt-8 flex items-center gap-4">
         <Link
-          className=" z-30 flex items-center gap-2 rounded-lg bg-gray-200 px-6 py-2 text-sm  text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor dark:shadow-shadowOne  dark:hover:shadow-none"
+          className=" z-30 flex items-center gap-2 rounded-lg bg-gray-200 px-6 py-2 text-sm font-semibold text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor dark:shadow-shadowOne dark:hover:shadow-none"
           to={verifyUrl}
         >
           <span>Verify</span>
@@ -40,7 +40,7 @@ const Certificate = ({ imageMin, imageWebp, verifyUrl, pdfUrl }) => {
           to={pdfUrl}
           target="_blank"
           download
-          className=" z-30 rounded-lg bg-gray-200 px-6 py-2 text-sm text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor dark:shadow-shadowOne hover:dark:shadow-none"
+          className=" z-30 rounded-lg bg-gray-200 px-6 py-2 text-sm font-semibold text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor dark:shadow-shadowOne hover:dark:shadow-none"
         >
           Download pdf
         </Link>

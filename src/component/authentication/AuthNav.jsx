@@ -38,7 +38,7 @@ const Auth = () => {
           />
           <NavLink
             to={"me"}
-            className=" rounded-sm border-none px-2 py-1 font-medium capitalize text-gray-400 outline-none focus:ring-2 focus:ring-designColor"
+            className=" rounded-sm border-none px-2 py-1 font-medium capitalize text-blue-500 underline outline-none duration-300 hover:no-underline focus:ring-2 focus:ring-designColor dark:text-gray-300"
           >
             {name}
           </NavLink>

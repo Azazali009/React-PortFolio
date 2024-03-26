@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import HomeIcons from "./HomeIcons";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const childVariant = {
   hidden: {
@@ -39,6 +39,10 @@ const HomeLeft = () => {
     typeSpeed: 50,
     deleteSpeed: 50,
   });
+
+  function handleDownload() {
+    window.open("/data/azaz.pdf", "_blank");
+  }
   return (
     <motion.div className=" w-full self-start lg:w-1/2">
       <motion.p
@@ -76,14 +80,15 @@ const HomeLeft = () => {
           <HomeIcons />
         </motion.div>
         <motion.div variants={iconVariants} whileHover={"hover"}>
-          <Link
+          <button
+            onClick={handleDownload}
             className=" rounded px-8 py-2.5 capitalize text-gray-500 shadow-shadowTwo dark:bg-designColor dark:text-white dark:shadow-none sm:px-16 sm:py-4"
-            to="/data/AzazaliCv.docx"
-            target="_blank"
-            download
+            // to="/data/AzazaliCv.docx"
+            // target="_blank"
+            // download
           >
             download cv
-          </Link>
+          </button>
         </motion.div>
       </motion.div>
     </motion.div>
