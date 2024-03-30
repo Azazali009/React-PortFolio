@@ -2,11 +2,12 @@ import React from "react";
 import BlogRow from "./BlogRow";
 import { useBlogs } from "./useBlogs";
 import Error from "../../ui/Error";
-import SubPageLoader from "../../ui/SubPageLoader";
+// import SubPageLoader from "../../ui/SubPageLoader";
+import BlogLoader from "./BlogLoader";
 
 const ReadAllBlogs = () => {
   const { filterBlogs, isLoading, isError } = useBlogs();
-  if (isLoading) return <SubPageLoader />;
+  if (isLoading) return <BlogLoader />;
   if (isError) return <Error />;
 
   return (

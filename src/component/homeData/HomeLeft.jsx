@@ -41,7 +41,7 @@ const HomeLeft = () => {
   });
 
   function handleDownload() {
-    window.open("/data/azaz.pdf", "_blank");
+    window.open("/data/DeveloperAzazAli.pdf", "_blank");
   }
   return (
     <motion.div className=" w-full self-start lg:w-1/2">
