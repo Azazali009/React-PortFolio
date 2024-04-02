@@ -7,7 +7,7 @@ const BlogLoader = () => {
         return (
           <div
             key={i}
-            className=" h-28 w-[100%] animate-pulse rounded-lg bg-gray-300 dark:bg-gray-900 sm:h-52"
+            className=" h-28 w-full animate-pulse rounded-lg bg-gray-300 dark:bg-gray-900 sm:h-52 sm:w-[90%]"
           ></div>
         );
       })}

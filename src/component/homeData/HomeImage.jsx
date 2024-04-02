@@ -84,14 +84,14 @@ const HomeImage = () => {
           <source srcSet={imageMin} type="image/png" />
           <motion.img
             loading="lazy"
-            className=" relative z-10 h-[400px] w-[230px] lg:-mt-40 lg:h-[680px] lg:w-[370px] xl:h-[800px] xl:w-[450px]"
+            className=" relative z-10 h-[400px] w-[230px] lg:-mt-40 lg:h-[680px] lg:w-[370px] "
             src={imageMin}
             alt="Hero image"
             variants={imageVariant}
           />
         </picture>
         <motion.div
-          className="  absolute bottom-0 h-[300px] w-[230px] rounded-lg from-[#1e2024] to-[#202327] shadow-shadowTwo dark:bg-gradient-to-r dark:shadow-shadowOne lg:h-[500px] lg:w-[370px] xl:h-[550px] xl:w-[450px]"
+          className="  absolute bottom-0 h-[300px] w-[230px] rounded-lg from-[#1e2024] to-[#202327] shadow-shadowTwo dark:bg-gradient-to-r dark:shadow-shadowOne lg:h-[500px] lg:w-[370px]"
           variants={imageBackVariant}
         ></motion.div>
       </div>

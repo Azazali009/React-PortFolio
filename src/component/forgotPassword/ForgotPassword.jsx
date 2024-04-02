@@ -17,8 +17,8 @@ const ForgotPassword = () => {
   };
   const onError = (err) => {};
   return (
-    <div className="flex w-full justify-center bg-gray-200 font-primary text-gray-500 dark:bg-bodyColor dark:text-white">
-      <div className="mx-2 mt-6 h-fit rounded-xl p-3 shadow-shadowTwo dark:shadow-shadowOne sm:mx-0 sm:p-6">
+    <div className="flex w-full justify-center bg-gray-200 py-16 font-primary text-gray-500 dark:bg-bodyColor dark:text-white">
+      <div className="mx-2 h-fit rounded-xl px-6 py-10  shadow-shadowTwo dark:shadow-shadowOne sm:mx-0 sm:p-6">
         <button
           onClick={() => navigate(-1)}
           className=" mb-5 rounded-md py-1.5 font-semibold"

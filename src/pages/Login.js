@@ -11,7 +11,7 @@ const Login = () => {
     if (isAuthenticated) return navigate("/");
   }, [navigate, isAuthenticated]);
   return (
-    <div className=" flex min-h-screen justify-center bg-gray-200 font-primary dark:bg-bodyColor">
+    <div className=" flex justify-center bg-gray-200 py-16 font-primary dark:bg-bodyColor">
       <LoginForm />
     </div>
   );
