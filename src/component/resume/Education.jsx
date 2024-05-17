@@ -25,14 +25,15 @@ const Education = () => {
       variants={pageTransitionVariants}
       initial="hidden"
       animate="visible"
+      className="pb-16"
     >
-      <div className=" font-primary text-gray-500 dark:text-lightText text-center my-12 ">
-        <p className=" text-designColor opacity-95 mb-4">2014 - 2024</p>
-        <h2 className=" text-3xl sm:text-4xl capitalize font-bold">
+      <div className=" my-12 text-center font-primary text-gray-500 dark:text-lightText ">
+        <p className=" mb-4 text-designColor opacity-95">2014 - 2024</p>
+        <h2 className=" text-3xl font-bold capitalize sm:text-4xl">
           Education Quality
         </h2>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:p-8">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:p-8">
         <ResumeCard
           title={"BSc in Computer Science"}
           subTitle={"AWKUM Mardan (2020-2024) "}

@@ -41,8 +41,8 @@ const SignupForm = () => {
       <FormRow lable="name" error={errors?.name?.message}>
         <input
           type="text"
-          placeholder="Enter email"
-          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.name?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
+          placeholder="Enter name"
+          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.name?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
           {...register("name", {
             required: "Field is required.",
           })}
@@ -54,7 +54,7 @@ const SignupForm = () => {
           type="email"
           placeholder="Enter email"
           autoComplete="email"
-          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.email?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
+          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.email?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
           {...register("email", {
             required: "Field is required.",
             pattern: {
@@ -69,7 +69,7 @@ const SignupForm = () => {
         <input
           type="password"
           placeholder="Enter password"
-          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.password?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
+          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.password?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
           {...register("password", {
             required: "Field is required.",
             minLength: {
@@ -87,7 +87,7 @@ const SignupForm = () => {
         <input
           type="password"
           placeholder="Enter password"
-          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-300 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.confirmPassword?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
+          className={`h-12 w-full rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.confirmPassword?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
           {...register("confirmPassword", {
             required: "Field is required.",
             validate: (value) =>
@@ -100,7 +100,7 @@ const SignupForm = () => {
         <button
           disabled={isCreating}
           type="submit"
-          className="btn-success btn w-full"
+          className="btn-success btn w-full hover:scale-95"
         >
           signup
         </button>

@@ -62,7 +62,6 @@ const Header = () => {
   }, [lastScroll]);
 
   return (
-    // <header className=" font-primary bg-gray-200 dark:bg-bodyColor text-lightText flex justify-between shadow-md sticky top-0 z-10 items-center px-1 sm:px-4 h-20 dark:border-gray-800 border-b-2">
     <header
       className={` ${show} sticky top-0 z-10 flex h-20 items-center justify-between border-b border-gray-300 bg-gray-200 px-1 font-primary text-lightText  transition-transform duration-700  dark:border-gray-800 dark:bg-bodyColor sm:px-4`}
     >

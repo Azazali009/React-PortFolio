@@ -1,15 +1,13 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { login as loginApi } from "../../services/apiAuth";
 import toast from "react-hot-toast";
 
 export function useLogin() {
-  const queryClient = useQueryClient();
   const { mutate: login, isPending } = useMutation({
     mutationFn: ({ email, password }) => loginApi({ email, password }),
-    onSuccess: ({ user }) => {
-      queryClient.setQueryData(["user"], user);
-    },
+
     onError: (err) => {
+      console.log(err);
       if (
         err.message
           .toString()
@@ -22,5 +20,6 @@ export function useLogin() {
       }
     },
   });
+
   return { login, isPending };
 }
