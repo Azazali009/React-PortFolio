@@ -100,7 +100,7 @@ const SignupForm = () => {
         <button
           disabled={isCreating}
           type="submit"
-          className="btn-success btn w-full hover:scale-95"
+          className="btn-success btn  hover:scale-95"
         >
           signup
         </button>

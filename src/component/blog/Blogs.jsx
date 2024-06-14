@@ -17,13 +17,12 @@ const Blogs = () => {
     isLoading: isLoadingUser,
   } = useCurrentUser();
 
-  // 1). Toggle blog modal form
   const [showModal, setShowModal] = useState(false);
 
-  // 3). Close modal function
+  // 1). Close modal function
   const onClose = () => setShowModal(false);
 
-  // 4). clear search filter function
+  // 2). clear search filter function
 
   const handleSearchFilter = () => {
     searchParams.set("search", "");

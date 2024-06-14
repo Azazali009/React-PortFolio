@@ -2,11 +2,7 @@ import React from "react";
 import Certificates from "./Certificates";
 
 const CertificatesSection = () => {
-  return (
-    <div>
-      <Certificates />
-    </div>
-  );
+  return <Certificates />;
 };
 
 export default CertificatesSection;

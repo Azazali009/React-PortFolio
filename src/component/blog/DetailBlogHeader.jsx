@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { dateFormatter } from "../../helper/DateFormatter";
 
-const DetailBlogHeader = ({ title, authorImage, author, created_at }) => {
+const DetailBlogHeader = ({
+  title,
+  authorImage,
+  author,
+  created_at,
+  author_linkdin,
+}) => {
   return (
     <>
       <h1 className=" font-secondary text-2xl capitalize sm:text-4xl ">
@@ -23,7 +29,7 @@ const DetailBlogHeader = ({ title, authorImage, author, created_at }) => {
             <span>
               <Link
                 className="font-medium uppercase text-sky-500 duration-300 hover:text-sky-700"
-                to={"https://www.linkedin.com/in/azaz-ali-7209042a6/"}
+                to={author_linkdin}
               >
                 follow
               </Link>

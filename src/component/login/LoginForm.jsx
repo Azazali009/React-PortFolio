@@ -45,11 +45,11 @@ const LoginForm = () => {
       <form
         autoComplete="off"
         onSubmit={handleSubmit(onSubmit, onError)}
-        className="mx-5 mt-3 w-full space-y-6 rounded-xl px-3 py-10 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:mx-0 sm:max-w-2xl sm:space-y-12 sm:px-8
+        className="mx-5 mt-3 w-full space-y-10 rounded-xl px-3 py-10 text-gray-500 shadow-shadowTwo dark:text-white dark:shadow-shadowOne sm:mx-0 sm:max-w-2xl sm:space-y-12 sm:px-8
       
       "
       >
-        <h2 className=" mb-10 text-center text-lg font-semibold capitalize text-sky-500 dark:text-sky-300 sm:mb-16 sm:text-3xl">
+        <h2 className="  text-center text-lg font-semibold capitalize text-sky-500 dark:text-sky-300 sm:text-3xl">
           Login to your account
         </h2>
 
@@ -57,7 +57,7 @@ const LoginForm = () => {
           <input
             type="email"
             placeholder="Enter email"
-            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.email?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
+            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.email?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none `}
             {...register("email", {
               required: "Field is required.",
               pattern: {
@@ -72,7 +72,7 @@ const LoginForm = () => {
           <input
             type="password"
             placeholder="Enter password"
-            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.password?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none sm:w-3/4`}
+            className={`h-12 w-full rounded-lg border-gray-700 bg-gray-200 p-4 text-gray-500 shadow-shadowTwo outline-none outline-offset-2 focus-visible:border-b-transparent ${errors?.password?.message ? "focus-visible:outline-designColor" : "focus-visible:outline-sky-500"} dark:border-b-[1px] dark:bg-[#191b1e] dark:text-lightText dark:shadow-none`}
             {...register("password", {
               required: "Field is required.",
             })}
@@ -83,11 +83,11 @@ const LoginForm = () => {
           <button
             disabled={isPending}
             type="submit"
-            className="sm:text-bas btn-info btn-sm btn w-full text-xs transition-all duration-500 sm:btn-md hover:scale-95 hover:bg-opacity-75"
+            className="sm:text-bas btn-info btn-sm btn text-xs transition-all duration-500 sm:btn-md hover:scale-95 hover:bg-opacity-75"
           >
             login
           </button>
-          <div className="divider text-xs sm:text-base">OR</div>
+          <div className="divider mt-2 p-0 text-xs sm:text-base">OR</div>
         </div>
         <div className=" flex flex-col justify-between gap-4 sm:flex-row sm:gap-0">
           <p className="whitespace-nowrap font-light">

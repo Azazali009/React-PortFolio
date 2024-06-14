@@ -1,10 +1,27 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+// import Modal from "../../ui/Modal";
+// import { useModalContext } from "../../context/ModalContext";
+// import { certificatesData } from "./certificateData";
 
-const Certificate = ({ imageMin, imageWebp, verifyUrl, pdfUrl }) => {
-  useEffect(() => {});
+const Certificate = ({ id, imageMin, imageWebp, verifyUrl, pdfUrl }) => {
+  // const [cardId, setCardId] = useState(null);
+  // const [selectedCard, setSelectedCard] = useState({});
+  // const { openModal, setOpenModal, onClose } = useModalContext();
+
+  function handleDownload(pdf) {
+    window.open(pdf, "_blank");
+  }
+
+  // function handleClick() {
+  //   setOpenModal(true);
+
+  //   const filterCard = certificatesData?.find((cur) => cur.id === id);
+  //   setSelectedCard(filterCard);
+  // }
+
   return (
-    <div className=" group overflow-hidden rounded-lg p-6 shadow-shadowTwo transition-all duration-200 hover:shadow-none dark:shadow-shadowOne">
+    <div className=" group relative overflow-hidden rounded-lg p-6 shadow-shadowTwo transition-all duration-200 hover:shadow-none dark:shadow-shadowOne">
       <picture>
         <source srcSet={imageWebp} type="image/webp" />
         <source srcSet={imageMin} type="image/jpg" />
@@ -15,6 +32,15 @@ const Certificate = ({ imageMin, imageWebp, verifyUrl, pdfUrl }) => {
         />
       </picture>
 
+      {/* <div className="flex flex-col items-start py-4 text-base text-stone-500 dark:text-stone-300">
+        <p className=" leading-8">
+          {cardId === id ? summary : `${summary.slice(0, 100)}...`}
+        </p>
+
+        <button onClick={handleClick} className=" capitalize text-sky-500">
+          see more &darr;
+        </button>
+      </div> */}
       <div className=" mt-8 flex items-center gap-4">
         <Link
           className=" z-30 flex items-center gap-2 rounded-lg bg-gray-200 px-6 py-2 text-sm font-semibold text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor dark:shadow-shadowOne dark:hover:shadow-none"
@@ -36,14 +62,12 @@ const Certificate = ({ imageMin, imageWebp, verifyUrl, pdfUrl }) => {
             />
           </svg>
         </Link>
-        <Link
-          to={pdfUrl}
-          target="_blank"
-          download
+        <button
+          onClick={() => handleDownload(pdfUrl)}
           className=" z-30 rounded-lg bg-gray-200 px-6 py-2 text-sm font-semibold text-sky-500 shadow-shadowTwo transition-all duration-300 hover:text-sky-600 hover:shadow-none dark:bg-bodyColor dark:text-designColor dark:shadow-shadowOne hover:dark:shadow-none"
         >
-          Download pdf
-        </Link>
+          View <span className=" uppercase">pdf</span>
+        </button>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Author = ({ authorImage, author }) => {
+const Author = ({ authorImage, author, author_linkdin, linkdin_followers }) => {
   return (
     <div className="mx-auto w-full px-6 py-12 text-gray-600 dark:text-gray-200 sm:w-[50%] sm:px-0">
       <img
@@ -14,12 +14,17 @@ const Author = ({ authorImage, author }) => {
           <h1 className=" text-xl font-semibold capitalize sm:text-3xl">
             Written by: <span>{author}</span>{" "}
           </h1>
-          <p>80 Followers</p>
+          <p className="flex items-center gap-1">
+            <span className="font-medium">
+              {linkdin_followers > 500 ? "500+" : linkdin_followers}
+            </span>
+            <span>Followers</span>
+          </p>
           <Link
             className=" text-sm text-sky-500 underline hover:no-underline sm:text-base"
-            to={"https://www.linkedin.com/in/azaz-ali-7209042a6/"}
+            to={author_linkdin}
           >
-            https://www.linkedin.com/in/azaz-ali-7209042a6/
+            {author_linkdin}
           </Link>
         </div>
         <div className=" -order-1 mb-8 sm:order-[0] sm:mb-0">

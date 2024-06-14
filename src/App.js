@@ -1,26 +1,29 @@
-import { Suspense, lazy, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import Header from "./ui/Header";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Toaster } from "react-hot-toast";
 
 import Education from "./component/resume/Education";
 import Skills from "./component/resume/Skills";
 import Experience from "./component/resume/Experience";
 import ResumeHome from "./component/resume/ResumeHome";
-import Modal from "./ui/Modal";
 import PageLoader from "./ui/PageLoader";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { Toaster } from "react-hot-toast";
 import UserAccount from "./component/user/UserAccount";
 import ForgotPassword from "./component/forgotPassword/ForgotPassword";
 import RecoverPassword from "./component/forgotPassword/RecoverPassword";
 import DetailBlog from "./component/blog/DetailBlog";
-
+import { ModalProvider } from "./context/ModalContext";
+import BlogManagement from "./component/dashboard/BlogManagement";
+import DashboardHome from "./component/dashboard/DashboardHome";
+import ReactGA from "react-ga";
 // Dynamic imports
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Header = lazy(() => import("./ui/Header"));
 const Home = lazy(() => import("./pages/Home"));
 const Features = lazy(() => import("./pages/Features"));
 const Resume = lazy(() => import("./pages/Resume"));
@@ -29,6 +32,13 @@ const Contacts = lazy(() => import("./pages/Contacts"));
 const Footer = lazy(() => import("./pages/Footer"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
+ReactGA.initialize("G-SFZFDWWB3N", {
+  debug: true,
+  titleCase: false,
+  gaOptions: {
+    userId: 123,
+  },
+});
 function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -37,69 +47,82 @@ function App() {
       },
     },
   });
+
   const [openModal, setOpenModal] = useState(false);
   const location = useLocation();
+  const isAuthPages =
+    location.pathname === "/login" ||
+    location.pathname === "/register" ||
+    location.pathname.startsWith("/dashboard");
   const close = () => setOpenModal(false);
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
   return (
     <div className="App">
-      {openModal && (
-        <Modal onClose={close} title={"under building"}>
-          Sorry! These pages are under construction. We will build those pages
-          as soon as possible. If you need any contact information or any
-          material you can contact us through website or directly through email.
-          Thank You
-        </Modal>
-      )}
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <Toaster
-          position="top-right"
-          gutter={12}
-          containerStyle={{ margin: "8px", fontFamily: "Montserrat" }}
-          toastOptions={{
-            success: {
-              duration: 3000,
-            },
-            error: {
-              duration: 5000,
-            },
-            style: {
-              fontSize: "12px",
-              maxWidth: "500px",
-              padding: "10px 24px",
-              fontWeight: "500",
-              background: "white",
-              color: "rgb(33, 21, 21)",
-            },
-          }}
-        />
-        <AnimatePresence>
-          <Header />
-          <Suspense fallback={<PageLoader />}>
-            <Routes location={location} key={location.key}>
-              <Route index element={<Home />} />
-              <Route path="features" element={<Features />} />
-              <Route path="resume" element={<Resume />}>
-                <Route index element={<ResumeHome />} />
-                <Route path="education" element={<Education />} />
-                <Route path="skills" element={<Skills />} />
-                <Route path="experience" element={<Experience />} />
-              </Route>
-              <Route path="blog" element={<Blog />} />
-              <Route path="blog/:blogId" element={<DetailBlog />} />
+      <ModalProvider>
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <Toaster
+            position="top-right"
+            gutter={12}
+            containerStyle={{ margin: "8px", fontFamily: "Montserrat" }}
+            toastOptions={{
+              success: {
+                duration: 3000,
+              },
+              error: {
+                duration: 5000,
+              },
+              style: {
+                fontSize: "12px",
+                maxWidth: "500px",
+                padding: "10px 24px",
+                fontWeight: "500",
+                background: "white",
+                color: "rgb(33, 21, 21)",
+              },
+            }}
+          />
+          <AnimatePresence>
+            {!isAuthPages && <Header />}
+            <Suspense fallback={<PageLoader />}>
+              <Routes location={location} key={location.key}>
+                <Route path="dashboard" element={<Dashboard />}>
+                  <Route index element={<DashboardHome />} />
+                  <Route path="manage-blogs" element={<BlogManagement />} />
+                </Route>
+                <Route index element={<Home />} />
+                <Route path="features" element={<Features />} />
+                <Route path="resume" element={<Resume />}>
+                  <Route index element={<ResumeHome />} />
+                  <Route path="education" element={<Education />} />
+                  <Route path="skills" element={<Skills />} />
+                  <Route path="experience" element={<Experience />} />
+                </Route>
+                <Route path="blog" element={<Blog />} />
+                <Route path="blog/:blogId" element={<DetailBlog />} />
 
-              <Route path="contacts" element={<Contacts />} />
-              <Route path="login" element={<Login />} />
-              <Route path="register" element={<Register />} />
-              <Route path="me" element={<UserAccount />} />
-              <Route path="forgot-password" element={<ForgotPassword />} />
-              <Route path="update-password" element={<RecoverPassword />} />
-              <Route path="*" element={<PageNotFound />} />
-            </Routes>
-          </Suspense>
-        </AnimatePresence>
-        <Footer setOpenModal={setOpenModal} />
-      </QueryClientProvider>
+                <Route path="contacts" element={<Contacts />} />
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
+                <Route path="me" element={<UserAccount />} />
+                <Route path="forgot-password" element={<ForgotPassword />} />
+                <Route path="update-password" element={<RecoverPassword />} />
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
+            </Suspense>
+          </AnimatePresence>
+          {!isAuthPages && (
+            <Footer
+              setOpenModal={setOpenModal}
+              openModal={openModal}
+              onClose={close}
+            />
+          )}
+        </QueryClientProvider>
+      </ModalProvider>
     </div>
   );
 }

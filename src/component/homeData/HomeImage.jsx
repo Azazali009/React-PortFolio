@@ -91,7 +91,7 @@ const HomeImage = () => {
           />
         </picture>
         <motion.div
-          className="  absolute bottom-0 h-[300px] w-[230px] rounded-lg from-[#1e2024] to-[#202327] shadow-shadowTwo dark:bg-gradient-to-r dark:shadow-shadowOne lg:h-[500px] lg:w-[370px]"
+          className="  absolute bottom-0 h-[300px] w-[230px] rounded-lg from-[#1e2024] to-[#202327] shadow-shadowTwo dark:shadow-shadowOne lg:h-[500px] lg:w-[370px]"
           variants={imageBackVariant}
         ></motion.div>
       </div>

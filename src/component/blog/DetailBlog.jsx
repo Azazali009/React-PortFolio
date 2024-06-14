@@ -24,6 +24,8 @@ const DetailBlog = () => {
     blogImage,
     category,
     content,
+    author_linkdin,
+    linkdin_followers,
   } = Blog;
 
   return (
@@ -35,6 +37,7 @@ const DetailBlog = () => {
           authorImage={authorImage}
           author={author}
           created_at={created_at}
+          author_linkdin={author_linkdin}
         />
         <DetailBlogImage
           blogImage={blogImage}
@@ -43,7 +46,12 @@ const DetailBlog = () => {
         />
         <DetailBlogContent content={content} />
       </div>
-      <Author authorImage={authorImage} author={author} />
+      <Author
+        authorImage={authorImage}
+        author={author}
+        author_linkdin={author_linkdin}
+        linkdin_followers={linkdin_followers}
+      />
     </div>
   );
 };

@@ -19,6 +19,6 @@ export function useBlogs() {
       ? blog
       : null,
   );
-  console.log(filterBlogs);
+
   return { filterBlogs, isLoading, isError };
 }

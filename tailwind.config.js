@@ -6,6 +6,8 @@ module.exports = {
     extend: {
       colors: {
         bodyColor: "#212428",
+        dashboardBg: "#24303F",
+        dashboardBg2: "#1A222C",
         lightText: "#c4cfde",
         designColor: "#ff013f",
         boxBg: "linear-gradient(145deg, #1e2024, #23272b)",
