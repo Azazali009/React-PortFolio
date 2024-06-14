@@ -4,7 +4,6 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
-  Cell,
   Pie,
   PieChart,
   Tooltip,
