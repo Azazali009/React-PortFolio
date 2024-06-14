@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
@@ -20,7 +20,7 @@ import DetailBlog from "./component/blog/DetailBlog";
 import { ModalProvider } from "./context/ModalContext";
 import BlogManagement from "./component/dashboard/BlogManagement";
 import DashboardHome from "./component/dashboard/DashboardHome";
-import ReactGA from "react-ga";
+// import ReactGA from "react-ga";
 // Dynamic imports
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Header = lazy(() => import("./ui/Header"));
@@ -32,13 +32,13 @@ const Contacts = lazy(() => import("./pages/Contacts"));
 const Footer = lazy(() => import("./pages/Footer"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
-ReactGA.initialize("G-SFZFDWWB3N", {
-  debug: true,
-  titleCase: false,
-  gaOptions: {
-    userId: 123,
-  },
-});
+// ReactGA.initialize("G-SFZFDWWB3N", {
+//   debug: true,
+//   titleCase: false,
+//   gaOptions: {
+//     userId: 123,
+//   },
+// });
 function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -56,9 +56,9 @@ function App() {
     location.pathname.startsWith("/dashboard");
   const close = () => setOpenModal(false);
 
-  useEffect(() => {
-    ReactGA.pageview(location.pathname + location.search);
-  }, [location]);
+  // useEffect(() => {
+  //   ReactGA.pageview(location.pathname + location.search);
+  // }, [location]);
   return (
     <div className="App">
       <ModalProvider>
