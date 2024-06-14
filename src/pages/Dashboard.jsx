@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useCurrentUser } from "../component/authentication/useCurrentUser";
 import SideBar from "../component/dashboard/SideBar";
 import DashboardHeader from "../component/dashboard/DashboardHeader";
