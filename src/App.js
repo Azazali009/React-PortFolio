@@ -20,25 +20,18 @@ import DetailBlog from "./component/blog/DetailBlog";
 import { ModalProvider } from "./context/ModalContext";
 import BlogManagement from "./component/dashboard/BlogManagement";
 import DashboardHome from "./component/dashboard/DashboardHome";
-// import ReactGA from "react-ga";
+import Header from "./ui/Header";
+import Footer from "./pages/Footer";
+
 // Dynamic imports
 const Dashboard = lazy(() => import("./pages/Dashboard"));
-const Header = lazy(() => import("./ui/Header"));
 const Home = lazy(() => import("./pages/Home"));
 const Features = lazy(() => import("./pages/Features"));
 const Resume = lazy(() => import("./pages/Resume"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Contacts = lazy(() => import("./pages/Contacts"));
-const Footer = lazy(() => import("./pages/Footer"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
-// ReactGA.initialize("G-SFZFDWWB3N", {
-//   debug: true,
-//   titleCase: false,
-//   gaOptions: {
-//     userId: 123,
-//   },
-// });
 function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -56,9 +49,6 @@ function App() {
     location.pathname.startsWith("/dashboard");
   const close = () => setOpenModal(false);
 
-  // useEffect(() => {
-  //   ReactGA.pageview(location.pathname + location.search);
-  // }, [location]);
   return (
     <div className="App">
       <ModalProvider>

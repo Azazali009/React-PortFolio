@@ -29,7 +29,7 @@ const Author = ({ authorImage, author, author_linkdin, linkdin_followers }) => {
         </div>
         <div className=" -order-1 mb-8 sm:order-[0] sm:mb-0">
           <Link
-            to={"https://www.linkedin.com/in/azaz-ali-7209042a6/"}
+            to={author_linkdin}
             className=" rounded-full bg-sky-500 px-6 py-1.5 font-semibold text-white transition-all duration-300 hover:bg-sky-600 active:scale-95"
           >
             follow

@@ -7,7 +7,7 @@ export function useBlogs() {
   const searchInput = searchParams.get("search") || "";
 
   let {
-    data: Blogs,
+    data: { data: Blogs, count } = {},
     isLoading,
     isError,
   } = useQuery({
@@ -15,10 +15,11 @@ export function useBlogs() {
     queryFn: () => getBlogs(searchInput),
   });
   const filterBlogs = Blogs?.filter((blog) =>
-    blog.title.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
+    blog.title.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase()) ||
+    blog.keyword.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
       ? blog
       : null,
   );
 
-  return { filterBlogs, isLoading, isError };
+  return { filterBlogs, isLoading, isError, count };
 }

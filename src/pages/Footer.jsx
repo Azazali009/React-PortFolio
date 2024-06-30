@@ -9,7 +9,7 @@ const Footer = ({ setOpenModal, openModal, onClose }) => {
   const curYear = new Date().getFullYear();
   return (
     <>
-      <div className=" relative min-h-screen w-full border-t-2 border-gray-300 bg-gray-200 p-10 font-primary dark:border-zinc-800 dark:bg-bodyColor dark:text-lightText ">
+      <div className=" relative min-h-screen w-full border-t-2 border-gray-300 bg-gray-200 p-10 font-primary dark:border-gray-900/40 dark:bg-bodyColor dark:text-lightText ">
         <div className=" mb-8 grid grid-cols-1 gap-y-10 pt-8 sm:grid-cols-2 sm:justify-items-center sm:gap-y-24 md:grid-cols-3">
           {/* Footer logo */}
           <div className="">

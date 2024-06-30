@@ -5,7 +5,7 @@ import Certificate from "./Certificate";
 
 const Certificates = () => {
   return (
-    <section className=" mb-12 pb-12">
+    <section className=" mb-12 pb-12 pt-32 sm:pt-40 md:pt-20">
       <h2 className=" flex flex-row items-center justify-center gap-2 font-semibold sm:flex-col sm:gap-3 sm:text-3xl ">
         <span className=" text-designColor">My achievements</span>
         <span>&</span>

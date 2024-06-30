@@ -6,12 +6,15 @@ import FormRow from "../../ui/FormRow";
 import { toolbarOptions } from "./ToolBarOptions";
 import { useSingleBlog } from "./useSingleBlog";
 import Modal from "../../ui/Modal";
+import { useUpdateBlog } from "./useUpdateBlog";
+import Button from "../../ui/Button";
 
 const module = {
   toolbar: toolbarOptions,
 };
 const UpdateBlog = ({ onClose, editId }) => {
   const { Blog, isLoading } = useSingleBlog(editId);
+  const { updateBlog, isUpdating } = useUpdateBlog();
   const {
     register,
     control,
@@ -23,7 +26,15 @@ const UpdateBlog = ({ onClose, editId }) => {
   });
 
   function onSubmit(data) {
-    alert(editId);
+    const image =
+      typeof data.blogImage === "string" ? data.blogImage : data?.blogImage[0];
+
+    updateBlog(
+      { newBlog: { ...data, blogImage: image }, id: editId },
+      {
+        onSuccess: onClose,
+      },
+    );
   }
   useEffect(() => {
     if (!isLoading && Blog) {
@@ -128,23 +139,18 @@ const UpdateBlog = ({ onClose, editId }) => {
             <input
               type="file"
               className={` w-full rounded-lg border-transparent bg-transparent p-4 shadow-xl outline-none  placeholder:text-[16px] placeholder:text-stone-400 ${errors?.blogImage?.message ? " border-2 focus-visible:border-designColor" : " border-none shadow-xl"} `}
-              {...register("blogImage", {
-                required: "Field is required.",
-                validate: (value) => {
-                  const isBigImage = value[0].size / 1000;
-                  return isBigImage < 1000 || "Image must be less than 1 MB";
-                },
-              })}
+              {...register("blogImage")}
             />
           </FormRow>
 
           <div className=" mt-6">
-            <button
+            <Button
+              disable={isUpdating}
               className="btn flex min-w-[8rem] items-center justify-center border-none bg-gradient-to-tr from-sky-600 to-cyan-400 font-semibold uppercase text-bodyColor hover:from-cyan-400 hover:to-sky-600 active:scale-95 disabled:bg-sky-500 disabled:text-bodyColor disabled:opacity-50"
               type="submit"
             >
               update
-            </button>
+            </Button>
           </div>
         </form>
       )}

@@ -9,7 +9,7 @@ const SideBar = () => {
   const location = useLocation();
 
   return (
-    <aside className=" flex flex-col px-6 py-3 text-slate-300 ">
+    <aside className="flex flex-col px-6 py-3 text-slate-300 ">
       <Logo />
       <ul className="  mt-20 flex flex-col gap-4">
         <Link

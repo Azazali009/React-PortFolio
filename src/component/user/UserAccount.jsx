@@ -4,7 +4,7 @@ import UpdatePassword from "./UpdatePassword";
 import { useCurrentUser } from "../authentication/useCurrentUser";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { RotatingTriangles } from "react-loader-spinner";
+import PageLoader from "../../ui/PageLoader";
 
 const UserAccount = () => {
   const navigate = useNavigate();
@@ -18,11 +18,7 @@ const UserAccount = () => {
     }
   }, [isAuthenticated, isLoading, navigate]);
   if (isLoading) {
-    return (
-      <div className=" flex min-h-screen w-full items-center justify-center">
-        <RotatingTriangles />
-      </div>
-    );
+    return <PageLoader />;
   }
   return (
     <div className="min-h-screen w-full bg-gray-200 font-primary dark:bg-bodyColor">

@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import ContactImage from "../component/contactData/ContactImage";
 import ContactForm from "../component/contactData/ContactForm";
 import { pageTransitionVariants } from "../animation variants/pageTransitionVariants";
+import { useUpdateVisitor } from "../component/visitor/useUpdateVisitor";
 
 const Contacts = () => {
+  const { updateVisitors } = useUpdateVisitor();
+  useEffect(() => {
+    updateVisitors("/contacts");
+  }, [updateVisitors]);
   return (
     <motion.div
       className=" min-h-screen bg-gray-200 pb-20 font-primary dark:bg-bodyColor sm:p-8"

@@ -4,7 +4,7 @@ const DetailBlogImage = ({ blogImage, category, author }) => {
   return (
     <figure className="flex flex-col items-center overflow-hidden text-center">
       <img
-        className="w-full rounded-md object-cover px-3 sm:h-[500px]"
+        className="w-full rounded-md object-cover px-3 sm:h-[700px]"
         src={blogImage}
         alt="Blog post"
       />

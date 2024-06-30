@@ -16,16 +16,16 @@ const LoginForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
 
   const onSubmit = ({ email, password }) => {
     login(
       { email, password },
       {
-        onSuccess: () => {
-          navigate("/", { replace: true });
-          reset();
+        onSuccess: ({ user }) => {
+          const isAdmin = user.user_metadata.isAdmin;
+          if (isAdmin) return navigate("/dashboard", { replace: true });
+          else return navigate("/", { replace: true });
         },
       },
     );
