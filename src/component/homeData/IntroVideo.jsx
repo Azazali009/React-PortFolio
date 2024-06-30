@@ -45,8 +45,9 @@ const IntroVideo = () => {
           </div>
           <video
             ref={videoRef}
+            poster="/data/poster.png"
             controls
-            className="h-full w-full "
+            className="h-full w-full bg-gray-300 "
             src="/data/intro-video.mp4"
           />
         </div>
