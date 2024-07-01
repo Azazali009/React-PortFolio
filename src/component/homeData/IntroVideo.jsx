@@ -52,10 +52,10 @@ const IntroVideo = () => {
           />
         </div>
         <div className=" space-y-4">
-          <h2 className=" font-primary text-xs font-bold  text-designColor sm:text-lg ">
+          <h2 className=" font-primary text-base font-bold  text-designColor sm:text-lg ">
             Meet Azaz Ali: Expert Developer in <br /> Modern Web Technologies
           </h2>
-          <p className=" w-full text-xs leading-6 sm:text-base sm:leading-7">
+          <p className=" w-full text-sm leading-6 sm:text-base sm:leading-7">
             Hi, I'm Azaz Ali, a passionate and skilled developer specializing in
             modern web technologies. With a strong foundation in React JS, Next
             JS, Node JS, and Supabase, I am dedicated to creating
