@@ -1,9 +1,9 @@
 import React from "react";
 import StatusCard from "./StatusCard";
-import { useAllVisitors } from "../visitor/useAllVisitors";
-import EyeSvg from "../../ui/EyeSvg";
-import { useBlogs } from "../blog/useBlogs";
-import StatusCardBookSvg from "../../ui/StatusCardBookSvg";
+import { useAllVisitors } from "../../visitor/useAllVisitors";
+import { useBlogs } from "../../../component/blog/useBlogs";
+import EyeSvg from "../../../ui/EyeSvg";
+import StatusCardBookSvg from "../../../ui/StatusCardBookSvg";
 
 const StatusCards = () => {
   // 1) visitor card stats

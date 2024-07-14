@@ -14,11 +14,11 @@ const StatusCard = ({ svg, title, subTitle, percetageValue, isLoading }) => {
           {title}
         </h2>
         <div className="flex items-center gap-4 ">
-          <p className=" text-sm capitalize text-gray-500 dark:text-gray-400">
+          <p className=" whitespace-nowrap text-sm capitalize text-gray-500 dark:text-gray-400">
             {subTitle}
           </p>
           <p
-            className={`${Number(percetageValue)?.toFixed(0) > 0 ? "text-green-600" : "text-sky-600"}`}
+            className={`${Number(percetageValue)?.toFixed(0) > 0 ? "text-green-600" : "text-sky-600"} whitespace-nowrap`}
           >
             {percetageValue?.toFixed(2)}%{" "}
             {Number(percetageValue)?.toFixed(0) > 0 && (

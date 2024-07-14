@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import StatusCards from "./StatusCards";
+// import StatusCards from "./StatusCards";
 import { useAllVisitors } from "../visitor/useAllVisitors";
 import BarChart from "../charts/BarChart";
 import LineChart from "../charts/LineChart";
 import DoughnutChart from "../charts/DoughnutChart";
 
 import { defaults } from "chart.js/auto";
+import StatusCards from "./statusCards/StatusCards";
 
 const DashboardHome = () => {
   const [htmlClassName, setHtmlClassName] = useState(() => {

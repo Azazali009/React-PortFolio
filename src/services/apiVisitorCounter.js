@@ -80,18 +80,3 @@ export async function getAllVisitors() {
   }
   return visitors;
 }
-
-// export async function getVisitorsAfterDate(date) {
-//   const { data, error } = await supabase
-//     .from("visitor")
-//     .select("*")
-//     .gte("created_at", date)
-//     .lte("created_at", getToday({ end: true }));
-
-//   if (error) {
-//     console.error(error);
-//     throw new Error("Bookings could not get loaded");
-//   }
-
-//   return data;
-// }

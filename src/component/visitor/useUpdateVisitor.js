@@ -4,12 +4,12 @@ import toast from "react-hot-toast";
 
 export function useUpdateVisitor() {
   const queryClient = useQueryClient();
-  const { mutate: updateVisitors } = useMutation({
+  const { mutate: updateVisitors, isPending: isUpdating } = useMutation({
     mutationFn: updateVisitorsApi,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["visitors"] });
     },
     onError: (err) => toast.error(err.message),
   });
-  return { updateVisitors };
+  return { updateVisitors, isUpdating };
 }

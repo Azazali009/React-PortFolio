@@ -18,7 +18,8 @@ import ForgotPassword from "./component/forgotPassword/ForgotPassword";
 import RecoverPassword from "./component/forgotPassword/RecoverPassword";
 import DetailBlog from "./component/blog/DetailBlog";
 import { ModalProvider } from "./context/ModalContext";
-import BlogManagement from "./component/dashboard/BlogManagement";
+// import BlogManagement from "./component/dashboard/BlogManagement";
+import BlogManagement from "./component/dashboard/blogManagment/BlogManagement";
 import DashboardHome from "./component/dashboard/DashboardHome";
 import Header from "./ui/Header";
 import Footer from "./pages/Footer";
@@ -78,7 +79,10 @@ function App() {
           <AnimatePresence>
             {!isAuthPages && <Header />}
             <Suspense fallback={<PageLoader />}>
-              <Routes location={location} key={location.key}>
+              <Routes
+                location={location}
+                key={`${location.key}-${Math.random()}`}
+              >
                 <Route path="dashboard" element={<Dashboard />}>
                   <Route index element={<DashboardHome />} />
                   <Route path="manage-blogs" element={<BlogManagement />} />
