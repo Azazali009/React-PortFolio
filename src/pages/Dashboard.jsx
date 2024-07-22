@@ -10,7 +10,6 @@ import AdminSignInInfoPopup from "../ui/AdminSignInInfoPopup";
 const Dashboard = () => {
   const [showPopUp, setShowPopUp] = useState(false);
   const navigate = useNavigate();
-
   const {
     isAuthenticated,
     isLoading,
@@ -26,9 +25,9 @@ const Dashboard = () => {
   }, [isAuthenticated, isAdmin, navigate, isLoading]);
 
   return (
-    <div className="grid min-h-screen grid-cols-[18rem_1fr] overflow-hidden bg-dashboardBg font-primary">
+    <div className="grid  grid-cols-[18rem_1fr] items-start overflow-hidden bg-dashboardBg font-primary">
       <SideBar />
-      <div className=" relative bg-gray-100 dark:bg-dashboardBg2">
+      <div className=" relative min-h-screen bg-gray-100 dark:bg-dashboardBg2">
         <DashboardHeader />
         <DashboardMainContent isLoading={isLoading} />
         <AdminSignInInfoPopup

@@ -4,7 +4,7 @@ import AdminInfo from "./AdminInfo";
 
 const DashboardHeader = () => {
   return (
-    <header className=" flex h-20 flex-col justify-center bg-white px-4 text-stone-600 shadow-md dark:bg-dashboardBg dark:text-white ">
+    <header className="flex h-20 flex-col justify-center bg-white px-4 text-stone-600 shadow-md dark:bg-dashboardBg dark:text-white ">
       <div className="flex items-center justify-between ">
         <form className=" h-14 grow overflow-hidden  rounded-full px-2">
           <div className=" flex items-center gap-2">

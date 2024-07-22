@@ -6,6 +6,7 @@ import HomeLeft from "../component/homeData/HomeLeft";
 import CertificatesSection from "../component/homeData/CertificatesSection";
 import { useUpdateVisitor } from "../component/visitor/useUpdateVisitor";
 import IntroVideo from "../component/homeData/IntroVideo";
+import { useAddDevice } from "../component/dashboard/useAddDevices";
 
 const pageTransitionVariants = {
   hidden: {
@@ -28,10 +29,14 @@ const pageTransitionVariants = {
 
 const Home = () => {
   const { updateVisitors } = useUpdateVisitor();
+  const { addDevice } = useAddDevice();
 
   useEffect(() => {
     updateVisitors("/");
   }, [updateVisitors]);
+  useEffect(() => {
+    addDevice();
+  }, [addDevice]);
   return (
     <motion.div
       className="min-h-screen bg-gray-200 p-4 font-primary text-xl font-medium text-gray-500 dark:bg-bodyColor 

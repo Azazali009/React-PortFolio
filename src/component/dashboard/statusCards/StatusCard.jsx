@@ -1,7 +1,13 @@
 import React from "react";
 import StatusCardSkeleton from "./StatusCardSkeleton";
 
-const StatusCard = ({ svg, title, subTitle, percetageValue, isLoading }) => {
+const StatusCard = ({
+  svg,
+  title,
+  subTitle,
+  percetageValue,
+  isLoading = false,
+}) => {
   if (isLoading) return <StatusCardSkeleton />;
 
   return (
