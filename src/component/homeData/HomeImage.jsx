@@ -62,7 +62,7 @@ const HomeImage = () => {
   }, []);
   return (
     <motion.div
-      className=" relative "
+      className=" relative hidden sm:block"
       variants={parentVariant}
       initial="hidden"
       animate="visible"
