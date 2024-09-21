@@ -31,4 +31,20 @@ export const Projects = [
     description:
       "Designed and developed a comprehensive website for Sallan Industrial Investment LLC to showcase their extensive range of products. Utilizing WordPress, the site features a clean and professional layout, detailed product pages, and an intuitive user interface. Enhanced with multimedia elements and optimized for both performance and responsiveness, this project highlights my ability to create impactful digital experiences that effectively present company offerings.",
   },
+  {
+    id: 55,
+    image: "/projects/futureconsultants.webp",
+    title: "Future Consultants.",
+    url: "https://www.futureconsultants.co.uk/",
+    description:
+      "Future Consultants showcases my expertise in creating user-friendly and visually appealing websites that effectively communicate services. Through a blend of modern design and strategic functionality, I developed this site to highlight my consultancy offerings. My attention to detail and commitment to responsive design ensure that visitors have an engaging experience, reflecting my dedication to quality and professionalism in every project.",
+  },
+  {
+    id: 66,
+    image: "/projects/ixperts.webp",
+    title: "Ixperts",
+    url: "https://www.ixperts.biz/",
+    description:
+      "Ixperts exemplifies my skills in delivering comprehensive web development solutions, digital marketing strategies, and professional video editing services. This site is designed to showcase my ability to blend creativity with technical expertise, providing clients with an intuitive and engaging platform. By highlighting our diverse service offerings, I aim to demonstrate my commitment to helping businesses thrive in the digital landscape through innovative and effective solutions.",
+  },
 ];

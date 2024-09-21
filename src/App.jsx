@@ -19,7 +19,6 @@ import RecoverPassword from "./component/forgotPassword/RecoverPassword";
 import DetailBlog from "./component/blog/DetailBlog";
 import { ModalProvider } from "./context/ModalContext";
 import BlogManagement from "./component/dashboard/BlogManagement";
-// import BlogManagement from "./component/dashboard/blogManagment/BlogManagement";
 import DashboardHome from "./component/dashboard/DashboardHome";
 import Header from "./ui/Header";
 import Footer from "./pages/Footer";

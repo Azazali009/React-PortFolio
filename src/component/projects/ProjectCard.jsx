@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 
 const ProjectCard = ({ title, image, description, url }) => {
   return (
-    <div className="group rounded-xl bg-gray-200 px-3 py-4 shadow-shadowTwo  duration-300 hover:-translate-y-7 hover:animate-pulse hover:shadow-none dark:bg-bodyColor dark:shadow-shadowOne dark:hover:shadow-none md:px-6 md:py-6">
-      <figure className=" ">
+    <div className="group rounded-xl bg-gray-200 px-3 py-4 shadow-shadowTwo  duration-300 hover:animate-pulse hover:shadow-none dark:bg-bodyColor dark:shadow-shadowOne dark:hover:shadow-none md:px-6 md:py-6">
+      <figure>
         <img
           src={image}
           alt={title}
-          className=" h-32 w-full rounded-md object-cover object-top duration-300  sm:h-60"
+          className=" h-full w-full rounded-md object-cover object-top duration-300  sm:h-60"
         />
         <figcaption className=" flex justify-between  py-4">
-          <h2 className=" bg-gradient-to-r from-blue-600 to-designColor bg-clip-text text-base font-semibold capitalize text-transparent dark:bg-gradient-to-l sm:text-xl">
-            {title}
-          </h2>
+          <Link to={url}>
+            <h2 className=" bg-gradient-to-r from-blue-600 to-designColor bg-clip-text text-base font-semibold capitalize text-transparent dark:bg-gradient-to-l sm:text-xl">
+              {title}
+            </h2>
+          </Link>
           <Link className=" hidden sm:block" target={"_blank"} to={url}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
