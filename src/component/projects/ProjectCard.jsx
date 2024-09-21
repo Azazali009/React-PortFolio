@@ -8,7 +8,7 @@ const ProjectCard = ({ title, image, description, url }) => {
         <img
           src={image}
           alt={title}
-          className=" h-full w-full rounded-md object-cover object-center duration-300  sm:h-60"
+          className=" h-36 w-full rounded-md object-cover object-center duration-300 sm:h-60"
         />
         <figcaption className=" flex justify-between  py-4">
           <Link to={url}>
