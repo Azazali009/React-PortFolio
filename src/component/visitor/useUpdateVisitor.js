@@ -9,7 +9,7 @@ export function useUpdateVisitor() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["visitors"] });
     },
-    onError: (err) => toast.error(err.message),
+    onError: (err) => window.location("/dashboard") && toast.error(err.message),
   });
   return { updateVisitors, isUpdating };
 }

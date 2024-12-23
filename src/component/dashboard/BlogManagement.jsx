@@ -47,7 +47,7 @@ const BlogManagement = () => {
   return (
     <>
       {showAddModal && <CreateBlog onClose={closeAddModal} />}
-      <div className="text-sm text-stone-600 dark:text-white">
+      <div className="pb-24 text-sm text-stone-600 dark:text-white">
         <div className="mb-4 flex items-center justify-between">
           <h1 className="  text-3xl font-semibold">All Blogs</h1>
 
